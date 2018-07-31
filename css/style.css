@@ -23,6 +23,21 @@ body {
     background: linear-gradient(to right, #2f8fce,#802ba4, #Ca4a78);
 }
 
+.intro {
+    top: 20%;
+    left: 20%;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.moving {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
 
 li {
     list-style-type: none;

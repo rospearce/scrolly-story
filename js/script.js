@@ -1,56 +1,14 @@
 // Instantiation
 $(function(){
 
-    // // variables to select key elements
-    // var interactive = $('.example');
-    // var background = interactive.find('.graphic-background');
-
-    // // viewport height
-    // var viewportHeight = window.innerHeight;
-    // var halfViewportHeight = Math.floor(viewportHeight / 2)
-
-    // // handle the fixed/static position of graphic
-    // // currently immediately switches between the two because of way numbers are set up
-    // var toggle = function(fixed, bottom) {
-    //     if (fixed) background.addClass('is-fixed')
-    //     else background.removeClass('is-fixed')
-
-    //     if (bottom) background.addClass('is-bottom')
-    //     else background.removeClass('is-bottom')
-    // }
-
-
-    var handleContainerScroll = function(event) {
-        // var bottom = false
-        // var fixed = false
-    
-        // var bb = background[0].getBoundingClientRect()
-
-        // var bottomFromTop = bb.bottom - viewportHeight
-
-        // console.log(bottomFromTop);
-        // console.log(bb.top);
-        // console.log(bb);
-    
-        // if (bb.top < 0 && bottomFromTop > 0) {
-        //     bottom = false
-        //     fixed = true
-        //     console.log('fixed');
-            
-        // } else if (bb.top < 0 && bottomFromTop < 0) {
-        //     bottom = true
-        //     fixed = false
-        //     console.log('bottom');
-        // }
-    
-        // toggle(fixed, bottom)
-    }    
-
+    // variables
+    var intro = $('.intro')
 
     // build DOM from data
     var impacts=[{
-        name: "1.5C vs 2C example",
-        text: "<li><i class='fas fa-paw'></i> Species</li><li><i class='fas fa-tint'></i> Rainfall</li><li><i class='fas fa-dollar-sign'></i> GDP</li></div>"
+        name: "Background-1"
+    },{
+        name: "Background-2"
     },{
         name: "Species",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
@@ -62,6 +20,26 @@ $(function(){
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
     }];
 
+    var enterEvents = function (ev, item) {
+        if(item.index === 0){
+            intro.addClass('fixed');
+        } else if (item.index === 1) {
+            // do nothing
+        } else {
+            item.el.css('background-color', '#c6e7fa');
+        }
+    }
+
+    var exitEvents = function (ev, item) {
+        if(item.index === 0){
+            intro.removeClass('fixed');
+        } else if (item.index === 1) {
+            // do nothing
+        } else {
+            item.el.css('background-color', '#c6e7fa');
+        }
+    }
+
     // pass in the data
     $("#container").scrollStory({
         content: impacts,
@@ -70,6 +48,8 @@ $(function(){
             // actually better to build all the items in the same way so that can manipulate the behaviour of all?
             if(item.index === 0) {
                 item.el.append("<h1>"+item.data.name+"</h1><div id='nav'>"+item.data.text+"</div>");
+            } else if (item.index === 1) {
+                // don't append anything
             } else {
                 item.el.append("<h2>"+item.data.name+"</h2><p>"+item.data.text+"</p>");
             }
@@ -78,12 +58,14 @@ $(function(){
             // log the founding dates as you go past
             console.log(item.data.name + ", is now active!");
         },
-        containerscroll: handleContainerScroll,
+        // containerscroll: handleContainerScroll,
+        itementerviewport: enterEvents,
+        itemexitviewport: exitEvents,
         complete: function() {
             var that = this;
             $('#nav').on('click', 'li', function() {
-                // +1 since not counting title slide
-                that.index($('li', $('#nav')).index($(this)) + 1);
+                // +2 since not counting title and first background
+                that.index($('li', $('#nav')).index($(this)) + 2);
             });
 
 
