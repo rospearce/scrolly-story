@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'PT Sans', Helvetica, Arial, Sans-serif;
+}
+
+#container {
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.example > div{
+    background-color: #ccc;
+    border-top:1px solid #000;
+    padding: 30px;
+    min-height: 800px;
+}
