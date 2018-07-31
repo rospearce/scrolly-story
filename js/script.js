@@ -22,7 +22,7 @@ $(function(){
 
     var enterEvents = function (ev, item) {
         if(item.index === 0){
-            intro.addClass('fixed');
+            // intro.addClass('fixed');
         } else if (item.index === 1) {
             // do nothing
         } else {
@@ -32,7 +32,7 @@ $(function(){
 
     var exitEvents = function (ev, item) {
         if(item.index === 0){
-            intro.removeClass('fixed');
+            intro.removeClass('fixed').addClass('moving');
         } else if (item.index === 1) {
             // do nothing
         } else {
@@ -47,7 +47,7 @@ $(function(){
             // add title from data
             // actually better to build all the items in the same way so that can manipulate the behaviour of all?
             if(item.index === 0) {
-                item.el.append("<h1>"+item.data.name+"</h1><div id='nav'>"+item.data.text+"</div>");
+                // don't append anything
             } else if (item.index === 1) {
                 // don't append anything
             } else {
