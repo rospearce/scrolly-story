@@ -1,5 +1,7 @@
 // Instantiation
 $(function(){
     $("#container").scrollStory();
-    console.log('scrollStory');
+
+    // var items = $('.scrollStoryItem');
+    // console.log(items);
 });
