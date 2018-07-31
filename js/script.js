@@ -1,24 +1,27 @@
 // Instantiation
 $(function(){
     // build DOM from data
-    var newspapers=[{
-        organization: "The New York Times",
-        founded: "1851"
+    var impacts=[{
+        name: "Species",
+        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
     },{
-        organization: "The Washington Post",
-        founded: "1877"
+        name: "Rainfall",
+        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
+    },{
+        name: "GDP",
+        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
     }];
 
     // pass in the data
     $("#container").scrollStory({
-        content: newspapers,
+        content: impacts,
         itembuild: function(ev, item){
             // add title from data
-            item.el.append("<h2>"+item.data.organization+"</h2>");
+            item.el.append("<h2>"+item.data.name+"</h2><p>"+item.data.text+"</p>");
         },
         itemfocus: function(ev, item){
             // log the founding dates as you go past
-            console.log(item.data.organization + ", founded in " + item.data.founded + ", is now active!");
+            console.log(item.data.name + ", is now active!");
         }
     });
 
@@ -36,7 +39,7 @@ $(function(){
         item.el.css('background-color', 'white');
     });
 
-    console.log(newspapers);
+    // console.log(newspapers);
 
 
 
