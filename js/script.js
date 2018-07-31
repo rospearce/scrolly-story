@@ -22,6 +22,17 @@ $(function(){
         itemfocus: function(ev, item){
             // log the founding dates as you go past
             console.log(item.data.name + ", is now active!");
+        },
+        complete: function() {
+            var that = this;
+            $('#nav').on('click', 'li', function() {
+                that.index($('li', $('#nav')).index($(this)));
+            });
+
+            // code blocks
+            // $('pre code').each(function(i, block) {
+            //     hljs.highlightBlock(block);
+            // });
         }
     });
 
@@ -39,8 +50,9 @@ $(function(){
         item.el.css('background-color', 'white');
     });
 
-    // console.log(newspapers);
-
+    // $('.droplink').on('click', function() {
+    //     var
+    // })
 
 
 
