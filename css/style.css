@@ -9,21 +9,21 @@ body {
     background-color: #f3f3f3;
 }
 
-.example > div{
-    background-color: #ccc;
+.example > div {
     border-top:1px solid #000;
     padding: 30px;
     min-height: 800px;
 }
-/* 
-.story{
-    background-color: white;
-  }
-  
-.story.active{
-    background-color: red;
+
+.story {
+    background-color: #ccc;
 }
 
-.scrollStoryActiveItem-story0-0 .story.active{
-    background-color: purple;
-} */
+.graph-background {
+    background: linear-gradient(to right, #2f8fce,#802ba4, #Ca4a78);
+}
+
+
+li {
+    list-style-type: none;
+}
