@@ -22,7 +22,23 @@ $(function(){
         }
     });
 
+    // manipulate the style of items as they gain and lose focus, making it dependent on index
+
+    $("#container").on('itemfocus', function(ev, item){
+        if(item.index === 0){
+            item.el.css('background-color', '#f3f3f3');
+        } else {
+            item.el.css('background-color', '#c6e7fa');
+        }
+    });
+        
+    $("#container").on('itemblur', function(ev, item){
+        item.el.css('background-color', 'white');
+    });
+
     console.log(newspapers);
+
+
 
 
 });

@@ -15,3 +15,15 @@ body {
     padding: 30px;
     min-height: 800px;
 }
+/* 
+.story{
+    background-color: white;
+  }
+  
+.story.active{
+    background-color: red;
+}
+
+.scrollStoryActiveItem-story0-0 .story.active{
+    background-color: purple;
+} */
