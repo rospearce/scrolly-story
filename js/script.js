@@ -22,7 +22,7 @@ $(function(){
 
     var enterEvents = function (ev, item) {
         if(item.index === 0){
-            // intro.addClass('fixed');
+            intro.removeClass('moving').addClass('fixed');
         } else if (item.index === 1) {
             // do nothing
         } else {
