@@ -5,7 +5,7 @@ $(function(){
     var $intro = $('.intro')
     var $sideNav = $('.side-nav')
     var $droplinks = $('.droplinks')
-
+    var windowHeight = $(window).height()
 
     // build DOM from data
     var impacts=[{
@@ -65,6 +65,7 @@ $(function(){
     }
 
     // pass in the data
+    // callbacks triggered on instantiation
     $("#container").scrollStory({
         content: impacts,
         itembuild: function(ev, item){
@@ -83,6 +84,7 @@ $(function(){
         itementerviewport: enterEvents,
         itemexitviewport: exitEvents,
         complete: function() {
+
             var that = this;
 
             // SET UP DROPLINKS
@@ -96,6 +98,28 @@ $(function(){
                 // +1 since not counting title
                 that.index($('li', $sideNav).index($(this)) + 1);
             });
+
+            // FADE DROPLINKS AS SCROLL
+
+            var range = 200;
+
+            $(window).on('scroll', function () {
+            
+                var scrollTop = $(this).scrollTop(),
+                    // height = windowHeight.outerHeight(),
+                    offset = windowHeight / 2,
+                    calc = 1 - (scrollTop - offset + range) / range;
+
+                $droplinks.css({ 'opacity': calc });
+
+                if (calc > '1') {
+                    $droplinks.css({ 'opacity': 1 });
+                } else if ( calc < '0' ) {
+                    $droplinks.css({ 'opacity': 0 });
+                }
+            
+            });
+
 
 
         }
@@ -112,6 +136,8 @@ $(function(){
     });
         
     $("#container").on('itemblur', function(ev, item){
+        // fired when an item loses 'focus
+        // will use to fade text
         // item.el.css('background-color', 'white');
     });
 
