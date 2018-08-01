@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
@@ -10,11 +10,21 @@
     <body>
         <div class="intro fixed">
             <h1>1.5C vs 2C example</h1>
-            <div id='nav'>
-                <li><i class='fas fa-paw'></i> Species</li>
-                <li><i class='fas fa-tint'></i> Rainfall</li>
-                <li><i class='fas fa-dollar-sign'></i> GDP</li>
+            <div class="droplinks">
+                <ul>
+                    <li><a href="#" class="droplink"><i class='fas fa-paw'></i> Species</a></li>
+                    <li><a href="#" class="droplink"><i class='fas fa-tint'></i> Rainfall</a></li>
+                    <li><a href="#" class="droplink"><i class='fas fa-dollar-sign'></i> GDP</a></li>
+                </ul>
             </div>
+        </div>
+        <div class="side-nav nav-moving">
+            <ul>
+                <li class="nav-circle"><a href="#"></a></li>
+                <li class="nav-circle"><a href="#"></a></li>
+                <li class="nav-circle"><a href="#"></a></li>
+                <li class="nav-circle"><a href="#"></a></li>
+            </ul>
         </div>
         <div id="container" class="example">
         </div>

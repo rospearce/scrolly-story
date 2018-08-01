@@ -2,7 +2,10 @@
 $(function(){
 
     // variables
-    var intro = $('.intro')
+    var $intro = $('.intro')
+    var $sideNav = $('.side-nav')
+    var $droplinks = $('.droplinks')
+
 
     // build DOM from data
     var impacts=[{
@@ -21,23 +24,44 @@ $(function(){
     }];
 
     var enterEvents = function (ev, item) {
+        
         if(item.index === 0){
-            intro.removeClass('moving').addClass('fixed');
+            // STICKY INTRO
+            $intro.removeClass('moving').addClass('fixed');
+            // STICKY SIDE NAV
+            $sideNav.removeClass('nav-fixed').addClass('nav-moving');
         } else if (item.index === 1) {
             // do nothing
         } else {
-            item.el.css('background-color', '#c6e7fa');
+            item.el.css('background-color', '#333333');
         }
     }
 
     var exitEvents = function (ev, item) {
+
         if(item.index === 0){
-            intro.removeClass('fixed').addClass('moving');
+            // STICKY INTRO
+            $intro.removeClass('fixed').addClass('moving');
+            // STICKY SIDE NAV
+            $sideNav.removeClass('nav-moving').addClass('nav-fixed');
         } else if (item.index === 1) {
             // do nothing
         } else {
-            item.el.css('background-color', '#c6e7fa');
+            item.el.css('background-color', '#333333');
         }
+    }
+
+    var focusEvents = function (ev, item) {
+        // SIDE NAV STYLING
+        // remove previous styling
+        $('li', $sideNav).removeClass('nav-active');
+        // as don't need any styling on first story
+        if(item.index > 0){
+            // the .eq() method reduces the set of matched elements to the one at the specified index.
+            $('li', $sideNav).eq(item.index - 1).addClass('nav-active');
+        }
+        // log the founding dates as you go past
+        console.log(item.data.name + ", is now active!");
     }
 
     // pass in the data
@@ -54,18 +78,23 @@ $(function(){
                 item.el.append("<h2>"+item.data.name+"</h2><p>"+item.data.text+"</p>");
             }
         },
-        itemfocus: function(ev, item){
-            // log the founding dates as you go past
-            console.log(item.data.name + ", is now active!");
-        },
+        itemfocus: focusEvents,
         // containerscroll: handleContainerScroll,
         itementerviewport: enterEvents,
         itemexitviewport: exitEvents,
         complete: function() {
             var that = this;
-            $('#nav').on('click', 'li', function() {
+
+            // SET UP DROPLINKS
+            $droplinks.on('click', 'li', function() {
                 // +2 since not counting title and first background
-                that.index($('li', $('#nav')).index($(this)) + 2);
+                that.index($('li', $droplinks).index($(this)) + 2);
+            });
+
+            // SET UP SIDE NAV
+            $sideNav.on('click', 'li', function() {
+                // +1 since not counting title
+                that.index($('li', $sideNav).index($(this)) + 1);
             });
 
 
@@ -76,16 +105,24 @@ $(function(){
 
     $("#container").on('itemfocus', function(ev, item){
         if(item.index === 0){
-            item.el.css('background-color', '#f3f3f3');
+            item.el.css('background-color', '#141414');
         } else {
-            item.el.css('background-color', '#c6e7fa');
+            item.el.css('background-color', '#333333');
         }
     });
         
     $("#container").on('itemblur', function(ev, item){
-        item.el.css('background-color', 'white');
+        // item.el.css('background-color', 'white');
     });
 
 
 
+});
+
+// SCROLL WINDOW TO TOP
+// so resets on refresh
+
+$(document).ready(function(){
+    $('html').animate({scrollTop:0}, 1);
+    $('body').animate({scrollTop:0}, 1);
 });
