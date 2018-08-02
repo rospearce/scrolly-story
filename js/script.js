@@ -80,7 +80,7 @@ $(function(){
                 // don't append anything
             } else {
                 item.el.append(
-                    "<div class='story-mask'><div class='story-gradient'><div class='story-content'><h2>"+item.data.name+"</h2><p>"+item.data.text+"</p></div></div></div>"
+                    "<div class='story-mask'><div class='story-content'><h2>"+item.data.name+"</h2><p>"+item.data.text+"</p></div></div>"
                 );
                 item.el.css("background-image", "url('" + item.data.background + "')");
             }
