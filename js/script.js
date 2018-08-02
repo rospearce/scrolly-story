@@ -10,7 +10,6 @@ $(function(){
     // build DOM from data
     var impacts=[{
         name: "Background-1",
-        
     },{
         name: "Background-2"
     },{
@@ -80,7 +79,9 @@ $(function(){
             } else if (item.index === 1) {
                 // don't append anything
             } else {
-                item.el.append("<h2>"+item.data.name+"</h2><p>"+item.data.text+"</p>");
+                item.el.append(
+                    "<div class='story-mask'><div class='story-gradient'><div class='story-content'><h2>"+item.data.name+"</h2><p>"+item.data.text+"</p></div></div></div>"
+                );
                 item.el.css("background-image", "url('" + item.data.background + "')");
             }
         },
