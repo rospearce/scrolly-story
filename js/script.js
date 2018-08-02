@@ -105,6 +105,7 @@ $(function(){
 
             $(window).on('scroll', function () {
             
+                // might use usewhere so may want to make these variable global
                 var scrollTop = $(this).scrollTop(),
                     // height = windowHeight.outerHeight(),
                     offset = windowHeight / 2,
@@ -116,6 +117,9 @@ $(function(){
                     $droplinks.css({ 'opacity': 1 });
                 } else if ( calc < '0' ) {
                     $droplinks.css({ 'opacity': 0 });
+                    $droplinks.css({ 'visibility': 'hidden' });
+                } else if (calc > '0') {
+                    $droplinks.css({ 'visibility': 'visible' });
                 }
             
             });
