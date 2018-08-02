@@ -9,18 +9,22 @@ $(function(){
 
     // build DOM from data
     var impacts=[{
-        name: "Background-1"
+        name: "Background-1",
+        
     },{
         name: "Background-2"
     },{
         name: "Species",
-        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
+        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
+        background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg"
     },{
         name: "Rainfall",
-        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
+        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
+        background: "https://www.carbonbrief.org/wp-content/uploads/2018/01/C5T9H7-rainfall.jpg"
     },{
         name: "GDP",
-        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam."
+        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
+        background: "https://www.carbonbrief.org/wp-content/uploads/2015/07/Stock-wall-street-new-york-finance.jpg"
     }];
 
     var enterEvents = function (ev, item) {
@@ -33,7 +37,7 @@ $(function(){
         } else if (item.index === 1) {
             // do nothing
         } else {
-            item.el.css('background-color', '#333333');
+            // item.el.css('background-color', '#333333');
         }
     }
 
@@ -47,7 +51,7 @@ $(function(){
         } else if (item.index === 1) {
             // do nothing
         } else {
-            item.el.css('background-color', '#333333');
+            // item.el.css('background-color', '#333333');
         }
     }
 
@@ -77,6 +81,7 @@ $(function(){
                 // don't append anything
             } else {
                 item.el.append("<h2>"+item.data.name+"</h2><p>"+item.data.text+"</p>");
+                item.el.css("background-image", "url('" + item.data.background + "')");
             }
         },
         itemfocus: focusEvents,
@@ -133,9 +138,9 @@ $(function(){
 
     $("#container").on('itemfocus', function(ev, item){
         if(item.index === 0){
-            item.el.css('background-color', '#141414');
+            // item.el.css('background-color', '#141414');
         } else {
-            item.el.css('background-color', '#333333');
+            // item.el.css('background-color', '#333333');
         }
     });
         
@@ -155,4 +160,5 @@ $(function(){
 $(document).ready(function(){
     $('html').animate({scrollTop:0}, 1);
     $('body').animate({scrollTop:0}, 1);
+    $droplinks.css({ 'visibility': 'visible' });
 });
