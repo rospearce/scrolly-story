@@ -81,7 +81,6 @@ a {
 }
 
 #lines-wrapper {
-    position: absolute;
     height: 1600px;
     width: 60%;
     left: 10%;
@@ -100,6 +99,11 @@ a {
 
 .fixed {
     position: fixed;
+}
+
+.lines-moving {
+    position: absolute;
+    top: calc(800px + 60px);
 }
 
 .moving {

@@ -1,5 +1,5 @@
 
-var margin = {top: 200, right: 0, bottom: 0, left: 50},
+var margin = {top: 180, right: 0, bottom: 0, left: 50},
 // calculate the width of the chart from the width of the line-wrapper
 width = parseInt(d3.select("#lines-wrapper").style("width")) - margin.left - margin.right,
 height = 1600 - margin.top - margin.bottom;
@@ -69,11 +69,12 @@ var lineInitial = d3.line()
     .x(function(d) { return x(0); })
     .y(function(d) { return y(0); });
 
+// from https://bl.ocks.org/mbostock/5649592
+
 function transition(path) {
     path.transition()
-        .duration(7500)
-        .attrTween("stroke-dasharray", tweenDash)
-        .each("end", function() { d3.select(this).call(transition); });
+        .duration(5000)
+        .attrTween("stroke-dasharray", tweenDash);
 }
     
 function tweenDash() {
@@ -82,27 +83,25 @@ function tweenDash() {
     return function(t) { return i(t); };
 }
 
-let lines = svg.append('g')
-.attr('class', 'lines');
-
-lines.selectAll('.line-group')
-.data(data).enter()
-.append('g')
-.attr('class', 'line-group')
-.append('path')
-.attr('class', 'line')  
-.attr("d", function(d) { return line(d.values); })
-.style('stroke', "white")
-.call(transition);
-
-
-
 // function to trigger at particular scroll point
 
 function drawLines () {
 
+    let lines = svg.append('g')
+    .attr('class', 'lines');
 
+    lines.selectAll('.line-group')
+    .data(data).enter()
+    .append('g')
+    .attr('class', 'line-group')
+    .append('path')
+    .attr('class', 'line')  
+    .attr("d", function(d) { return line(d.values); })
+    .style('stroke', "white")
+    .call(transition);
 
 }
 
-drawLines(data);
+setTimeout(function(){ 
+    drawLines();
+}, 1000);
