@@ -81,9 +81,18 @@ a {
 }
 
 #lines-wrapper {
-    height: 1600px;
+    /* each story is 800px plus 30px of padding on all sides */
+    height: 2580px;
     width: 60%;
     left: 10%;
+}
+
+#lines {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    height: 1720px;
+    z-index: 999999;
 }
 
 .line {
@@ -103,7 +112,11 @@ a {
 
 .lines-moving {
     position: absolute;
-    top: calc(800px + 60px);
+}
+
+.lines-fixed {
+    position: fixed;
+    top: -860px;
 }
 
 .moving {

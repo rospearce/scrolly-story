@@ -3,15 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     </head>
     <body>
-        <div id="lines-wrapper" class="fixed">
-        </div>  
+        <div id="lines-wrapper" class="lines-moving">
+            <div id="lines">
+            </div>  
+        </div>
         <div class="side-nav nav-moving">
             <ul>
                 <li class="nav-circle"><a href="#"></a></li>
@@ -39,6 +41,7 @@
             <p>Author name and logo</p>
         </footer>
     </body>
+    <script src="js/table.js"></script>
     <script src="js/lines.js"></script>
     <script src="js/jquery.scrollstory.js"></script>
     <script src="js/script.js"></script>

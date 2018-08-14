@@ -6,7 +6,8 @@ $(function(){
     var $sideNav = $('.side-nav')
     var $droplinks = $('.droplinks')
     var $gradient = $('.story-gradient')
-    var $lines = $('#lines-wrapper')
+    var $lines = $('#lines')
+    var $linesWrapper = $('#lines-wrapper')
     var windowHeight = $(window).height()
 
     // build DOM from data
@@ -33,11 +34,11 @@ $(function(){
         if(item.index === 0){
             // STICKY INTRO
             $intro.removeClass('moving').addClass('fixed');
-            $lines.removeClass('lines-moving').addClass('fixed');
+            // $lines.removeClass('lines-moving').addClass('fixed');
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-fixed').addClass('nav-moving');
         } else if (item.index === 1) {
-            // do nothing
+            $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
         } else {
             // item.el.css('background-color', '#333333');
         }
@@ -49,11 +50,11 @@ $(function(){
             // STICKY INTRO
             $intro.removeClass('fixed').addClass('moving');
             // STICKY Lines
-            $lines.removeClass('fixed').addClass('lines-moving');
+            // $lines.removeClass('fixed').addClass('lines-moving');
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-moving').addClass('nav-fixed');
         } else if (item.index === 1) {
-            // do nothing
+            $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
         } else {
             // item.el.css('background-color', '#333333');
         }
