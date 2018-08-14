@@ -85,6 +85,7 @@ a {
     height: 2580px;
     width: 60%;
     left: 10%;
+    z-index: 999999;
 }
 
 #lines {
@@ -92,7 +93,6 @@ a {
     width: 100%;
     top: 0;
     height: 1720px;
-    z-index: 999999;
 }
 
 .line {
