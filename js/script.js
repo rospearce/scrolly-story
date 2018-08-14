@@ -5,6 +5,7 @@ $(function(){
     var $intro = $('.intro')
     var $sideNav = $('.side-nav')
     var $droplinks = $('.droplinks')
+    var $gradient = $('.story-gradient')
     var windowHeight = $(window).height()
 
     // build DOM from data
@@ -79,9 +80,11 @@ $(function(){
             } else if (item.index === 1) {
                 // don't append anything
             } else {
+                // build impacts from data
                 item.el.append(
                     "<div class='story-mask'><div class='story-content'><h2>"+item.data.name+"</h2><p>"+item.data.text+"</p></div></div>"
                 );
+                // add their background images
                 item.el.css("background-image", "url('" + item.data.background + "')");
             }
         },
@@ -105,7 +108,7 @@ $(function(){
                 that.index($('li', $sideNav).index($(this)) + 1);
             });
 
-            // FADE DROPLINKS AS SCROLL
+            // SCROLL ACTIONS
 
             var range = 200;
 
@@ -113,23 +116,30 @@ $(function(){
             
                 // might use usewhere so may want to make these variable global
                 var scrollTop = $(this).scrollTop(),
-                    // height = windowHeight.outerHeight(),
-                    offset = windowHeight / 2,
-                    calc = 1 - (scrollTop - offset + range) / range;
+                // height = windowHeight.outerHeight(),
+                offset = windowHeight / 1.8,
+                // for bringing items in
+                calc1 = (scrollTop - offset + range) / range;
+                // for fading items away
+                calc2 = 1 - calc1;
 
-                $droplinks.css({ 'opacity': calc });
+                // FADE DROPLINKS
 
-                if (calc > '1') {
+                $droplinks.css({ 'opacity': calc2 });
+
+                if (calc2 > '1') {
                     $droplinks.css({ 'opacity': 1 });
-                } else if ( calc < '0' ) {
+                } else if ( calc2 < '0' ) {
                     $droplinks.css({ 'opacity': 0 });
-                    $droplinks.css({ 'visibility': 'hidden' });
-                } else if (calc > '0') {
-                    $droplinks.css({ 'visibility': 'visible' });
+                    // $droplinks.css({ 'visibility': 'hidden' });
+                } else if (calc2 > '0') {
+                    // $droplinks.css({ 'visibility': 'visible' });
                 }
+
+                // BRING IN GRADIENT BACKGROUND
+                $gradient.css({ 'opacity': calc1 });
             
             });
-
 
 
         }
@@ -149,6 +159,7 @@ $(function(){
         // fired when an item loses 'focus
         // will use to fade text
         // item.el.css('background-color', 'white');
+        // don't want it to suddenly change so will need to use some kind of function to get it to face
     });
 
 
@@ -161,5 +172,5 @@ $(function(){
 $(document).ready(function(){
     $('html').animate({scrollTop:0}, 1);
     $('body').animate({scrollTop:0}, 1);
-    $droplinks.css({ 'visibility': 'visible' });
+    // $droplinks.css({ 'visibility': 'visible' });
 });
