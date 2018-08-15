@@ -37,8 +37,13 @@ $(function(){
             // $lines.removeClass('lines-moving').addClass('fixed');
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-fixed').addClass('nav-moving');
+            // $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
         } else if (item.index === 1) {
+            // do nothing
             $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
+        } else if (item.index === 3) {
+            // do nothing
+            $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
         } else {
             // item.el.css('background-color', '#333333');
         }
@@ -54,7 +59,7 @@ $(function(){
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-moving').addClass('nav-fixed');
         } else if (item.index === 1) {
-            $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
+            // $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
         } else {
             // item.el.css('background-color', '#333333');
         }
