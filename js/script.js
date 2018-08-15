@@ -95,7 +95,11 @@ $(function(){
                     "<div class='story-mask'><div class='story-content'><h2>"+item.data.name+"</h2><p>"+item.data.text+"</p></div></div>"
                 );
                 // add their background images
-                item.el.css("background-image", "url('" + item.data.background + "')");
+                item.el.css({
+                    "background-image": "url('" + item.data.background + "')",
+                    "background-repeat": "no-repeat",
+                    "background-size": "cover"
+                });
             }
         },
         itemfocus: focusEvents,
@@ -148,6 +152,17 @@ $(function(){
 
                 // BRING IN GRADIENT BACKGROUND
                 $gradient.css({ 'opacity': calc1 });
+
+                // so doesn't continue increasing once move down page
+
+                if (calc2 > '1') {
+                    $gradient.css({ 'opacity': 0 });
+                } else if ( calc2 < '0' ) {
+                    $gradient.css({ 'opacity': 1 });
+                    // $droplinks.css({ 'visibility': 'hidden' });
+                } else if (calc2 > '0') {
+                    // $droplinks.css({ 'visibility': 'visible' });
+                }
             
             });
 

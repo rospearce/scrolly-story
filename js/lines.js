@@ -1,5 +1,5 @@
 
-var margin = {top: 180, right: 0, bottom: 0, left: 50},
+var margin = {top: 210, right: 0, bottom: 0, left: 0},
 // calculate the width of the chart from the width of the line-wrapper
 width = parseInt(d3.select("#lines").style("width")) - margin.left - margin.right,
 height = 2580 - margin.top - margin.bottom;
@@ -14,26 +14,26 @@ var svg = d3.select("#lines").append("svg")
 var data = [{
     name: "Line 2",
     values: [
-        {length: "0", across: "50"},
-        {length: "150", across: "50"},
-        {length: "200", across: "150"},
-        {length: "1000", across: "150"}
+        {length: "0", across: "100"},
+        {length: "150", across: "100"},
+        {length: "200", across: "300"},
+        {length: "1500", across: "300"}
     ]
 },{
     name: "Line 3",
     values: [
-        {length: "0", across: "50"},
-        {length: "150", across: "50"},
-        {length: "200", across: "250"},
-        {length: "1000", across: "250"}
+        {length: "0", across: "100"},
+        {length: "150", across: "100"},
+        {length: "200", across: "400"},
+        {length: "1500", across: "400"}
     ]
 },{
     name: "Line 4",
     values: [
-        {length: "0", across: "50"},
-        {length: "150", across: "50"},
-        {length: "200", across: "350"},
-        {length: "1000", across: "350"}
+        {length: "0", across: "100"},
+        {length: "150", across: "100"},
+        {length: "200", across: "500"},
+        {length: "1500", across: "500"}
     ]
 }]
 
@@ -54,8 +54,8 @@ var x = d3.scaleLinear()
 var y = d3.scaleLinear()
     .range([0, height]);
 
-x.domain([0, 500]);
-y.domain([0, 1000]);
+x.domain([0, 600]);
+y.domain([0, 1500]);
 
 // define the line
 var line = d3.line()
@@ -97,7 +97,7 @@ function drawLines () {
     .append('path')
     .attr('class', 'line')  
     .attr("d", function(d) { return line(d.values); })
-    .style('stroke', "white")
+    .style('stroke', "#f3f3f3")
     .call(transition);
 
 }
