@@ -6,7 +6,7 @@ $(function(){
     var $sideNav = $('.side-nav')
     var $droplinks = $('.droplinks')
     var $gradient = $('.story-gradient')
-    var $lines = $('#lines')
+    var $map = $('.map')
     var $linesWrapper = $('#lines-wrapper')
     var windowHeight = $(window).height()
 
@@ -18,15 +18,18 @@ $(function(){
     },{
         name: "SPECIES",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
-        background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg"
+        background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg",
+        map: "global"
     },{
         name: "RAINFALL",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
-        background: "https://www.carbonbrief.org/wp-content/uploads/2018/01/C5T9H7-rainfall.jpg"
+        background: "https://www.carbonbrief.org/wp-content/uploads/2018/01/C5T9H7-rainfall.jpg",
+        map: "latin-america"
     },{
         name: "GDP",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
-        background: "https://www.carbonbrief.org/wp-content/uploads/2015/07/Stock-wall-street-new-york-finance.jpg"
+        background: "https://www.carbonbrief.org/wp-content/uploads/2015/07/Stock-wall-street-new-york-finance.jpg",
+        map: "global"
     }];
 
     var enterEvents = function (ev, item) {
@@ -46,6 +49,7 @@ $(function(){
             $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
         } else {
             // item.el.css('background-color', '#333333');
+            // $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
         }
     }
 
@@ -66,6 +70,10 @@ $(function(){
     }
 
     var focusEvents = function (ev, item) {
+
+        // change css of map
+        $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
+
         // SIDE NAV STYLING
         // remove previous styling
         $('li', $sideNav).removeClass('nav-active');
