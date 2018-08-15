@@ -10,6 +10,9 @@ $(function(){
     var $linesWrapper = $('#lines-wrapper')
     var windowHeight = $(window).height()
 
+    var viewportHeight = window.innerHeight
+    var halfViewportHeight = Math.floor(viewportHeight / 2)
+
     // build DOM from data
     var impacts=[{
         name: "Background-1",
@@ -51,6 +54,8 @@ $(function(){
             // item.el.css('background-color', '#333333');
             // $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
         }
+
+        // console.log(item);
     }
 
     var exitEvents = function (ev, item) {
@@ -72,7 +77,7 @@ $(function(){
     var focusEvents = function (ev, item) {
 
         // change css of map
-        $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
+        // $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
 
         // SIDE NAV STYLING
         // remove previous styling
@@ -84,6 +89,10 @@ $(function(){
         }
         // log the founding dates as you go past
         console.log(item.data.name + ", is now active!");
+
+        // change css of map
+        $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
+        console.log(item.data.map);
     }
 
     // pass in the data
@@ -119,6 +128,8 @@ $(function(){
         },
         itemfocus: focusEvents,
         // containerscroll: handleContainerScroll,
+        // throttleType: 'debounce',
+        triggerOffset: halfViewportHeight, // seems to set the active story at a more sensible position
         itementerviewport: enterEvents,
         itemexitviewport: exitEvents,
         complete: function() {
@@ -169,7 +180,6 @@ $(function(){
                 $gradient.css({ 'opacity': calc1 });
 
                 // so doesn't continue increasing once move down page
-
                 if (calc2 > '1') {
                     $gradient.css({ 'opacity': 0 });
                 } else if ( calc2 < '0' ) {
