@@ -16,11 +16,11 @@ $(function(){
     },{
         name: "Background-2"
     },{
-        name: "Species",
+        name: "SPECIES",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg"
     },{
-        name: "Rainfall",
+        name: "RAINFALL",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/01/C5T9H7-rainfall.jpg"
     },{
@@ -90,11 +90,18 @@ $(function(){
             } else if (item.index === 1) {
                 // don't append anything
             } else {
+ 
                 // build impacts from data
                 item.el.append(
-                    "<div class='story-mask'><div class='story-content'><h2>"+item.data.name+"</h2><p>"+item.data.text+"</p></div></div>"
+                    "<div class='story-mask'><div class='story-content'><h2>" 
+                    + item.data.name 
+                    + "</h2><p>" 
+                    + item.data.text 
+                    + "</p></div></div>"
                 );
+
                 // add their background images
+                // might be better to do as a div so a mask can be added
                 item.el.css({
                     "background-image": "url('" + item.data.background + "')",
                     "background-repeat": "no-repeat",
