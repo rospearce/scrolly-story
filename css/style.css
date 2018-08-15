@@ -82,7 +82,7 @@ a {
 
 #lines-wrapper {
     /* each story is 800px plus 30px of padding on all sides */
-    height: 2580px;
+    height: 3440px;
     width: 60%;
     left: 10%;
 }
@@ -91,7 +91,7 @@ a {
     position: sticky;
     width: 100%;
     top: 0;
-    height: 1720px;
+    height: 2580px;
 }
 
 .line {

@@ -2,7 +2,7 @@
 var margin = {top: 180, right: 0, bottom: 0, left: 50},
 // calculate the width of the chart from the width of the line-wrapper
 width = parseInt(d3.select("#lines").style("width")) - margin.left - margin.right,
-height = 1720 - margin.top - margin.bottom;
+height = 2580 - margin.top - margin.bottom;
 
 var svg = d3.select("#lines").append("svg")
     .attr("id", "svg-1")
