@@ -46,6 +46,8 @@ myTable.selectAll("thead th")
     .text(function(column) {
         return column.charAt(0).toUpperCase() + column.substr(1);
     });
+
+myTable.select("thead th")[0].remove();
     
 // sort by age
 // myTable.selectAll("tbody tr")

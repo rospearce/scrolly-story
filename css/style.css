@@ -134,26 +134,48 @@ a {
 
 .table-wrapper {
     top: 1760px;
-    left: calc(30% + 40px);
-    width: 700px;
-    height: 2100px;
+    left: calc(10% + 330px);
+    width: 680px;
+    height: 2700px;
     position: absolute;
     z-index: 5;
 }
 
 .table {
     top: 40px;
-    width: 800px;
+    width: 680px;
     height: 800px;
     color: #f3f3f3;
     position: sticky;
+}
+
+table {
+    width: 100%;
+}
+
+td, th {
+    width: 25%;
+}
+
+th {
+    text-align: left;
+    padding-bottom: 50px;
+    font-family: "PT Sans Narrow";
+    font-weight: bold;
+    font-size: 31px;
+    padding-left: 10px;
+}
+
+td {
+    padding-bottom: 10px;
+    padding-left: 10px;
 }
 
 .map-wrapper {
     position: absolute;
     top: 2320px;
     /* work out once know how many stories have */
-    height: 2100px;
+    height: 1950px;
     left: calc(10% + 40px);
     width: 200px;
 }
