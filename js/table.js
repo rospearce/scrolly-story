@@ -1,9 +1,15 @@
-var getName = {
+var getSpeciesHeader = {
     "name": "",
     "1.5C": "1.5C",
     "2C": "2C",
-    "3C": "3C",
-    "3.2C": "3.2C"
+    "3C": "3.2C"
+}
+
+var getRainfallHeader = {
+    "name": "",
+    "1.5C": "1.5C",
+    "2C": "2C",
+    "3C": ""
 }
 
 var newData;
@@ -21,7 +27,7 @@ function tabulate(data, columns) {
         .enter()
         .append("th")
         .text(function(column) { 
-            return getName[column];
+            return getSpeciesHeader[column];
         });
 
     // console.log(columns);
@@ -100,6 +106,23 @@ function updateTable (newData) {
     .text(function(d) { return d; });
     
     cells.exit().remove();
+
+    // update the column headers
+
+    var dataName = "rainfall";
+
+    var getHeader = "get" + dataName.charAt(0).toUpperCase() + dataName.substr(1) + "Header";
+
+    console.log(getHeader);
+
+    myTable.selectAll("thead th")
+    .text(function(column) {
+        if (dataName =="rainfall") {
+            return getRainfallHeader[column];
+        } else {
+            //do nothing
+        }
+    });
 }
 
 setTimeout(function(){
