@@ -21,7 +21,11 @@ function tabulate(data, columns) {
             return getName[column];
         });
 
-    console.log(columns);
+    // console.log(columns);
+
+    // var headers = d3.selectAll('table').selectAll('th');
+
+    // console.log(headers);
 
     // create a row for each object in the data
     var rows = tbody.selectAll("tr")
@@ -64,6 +68,10 @@ var myTable = tabulate(species, ["name", "1.5C", "2C", "3.2C"]);
 //     .text(function(column) {
 //         return column.charAt(0).toUpperCase() + column.substr(1);
 //     });
+
+// bold the text of the first column
+myTable.selectAll('td:nth-child(1)')
+.style("font-weight", "bold");
 
 function updateTable () {};
 
