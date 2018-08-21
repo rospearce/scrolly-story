@@ -133,17 +133,20 @@ a {
 }
 
 .table-wrapper {
-    left: calc(20% + 40px);
-    width: 800px;
-    height: 800px;
-    position: fixed;
+    top: 1760px;
+    left: calc(30% + 40px);
+    width: 700px;
+    height: 2100px;
+    position: absolute;
     z-index: 5;
 }
 
 .table {
-    height: 100%;
-    width: 100%;
+    top: 40px;
+    width: 800px;
+    height: 800px;
     color: #f3f3f3;
+    position: sticky;
 }
 
 .map-wrapper {
