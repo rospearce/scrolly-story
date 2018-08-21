@@ -92,7 +92,21 @@ $(function(){
 
         // change css of map
         $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
-        console.log(item.data.map);
+        // console.log(item.data.map);
+
+        // item.el.removeClass('blur');
+
+    }
+
+    var blurEvents = function (ev, item) {
+
+        // better instead to make opacity of picture (or actually the mask) dependent on scroll?
+        
+        // don't apply to first two as have separate scroll based fade events for them
+        // if(item.index > 1){
+        //     item.el.addClass('blur');
+        // }
+
     }
 
     // pass in the data
@@ -127,6 +141,7 @@ $(function(){
             }
         },
         itemfocus: focusEvents,
+        itemblur: blurEvents,
         // containerscroll: handleContainerScroll,
         // throttleType: 'debounce',
         triggerOffset: halfViewportHeight, // seems to set the active story at a more sensible position
@@ -188,28 +203,13 @@ $(function(){
                 } else if (calc2 > '0') {
                     // $droplinks.css({ 'visibility': 'visible' });
                 }
+
+                // FADE ELEMENTS IN AND OUT
             
             });
 
 
         }
-    });
-
-    // manipulate the style of items as they gain and lose focus, making it dependent on index
-
-    $("#container").on('itemfocus', function(ev, item){
-        if(item.index === 0){
-            // item.el.css('background-color', '#141414');
-        } else {
-            // item.el.css('background-color', '#333333');
-        }
-    });
-        
-    $("#container").on('itemblur', function(ev, item){
-        // fired when an item loses 'focus
-        // will use to fade text
-        // item.el.css('background-color', 'white');
-        // don't want it to suddenly change so will need to use some kind of function to get it to face
     });
 
 

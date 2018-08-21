@@ -55,6 +55,7 @@ a {
 
 .story {
     background-color: rgba(51, 51, 51, 0.445);
+    /* opacity: 0.1; */
 }
 
 .story-content {
@@ -85,6 +86,40 @@ a {
     overflow: hidden;
 }
 
+/* .blur {
+    opacity: 0;
+    animation-name: fadeOutOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease;
+	animation-duration: 2s;
+} */
+
+/* .active {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+} */
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeOutOpacity {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
 .picture-mask {
     background-color: #28282e;
     position: fixed;
@@ -95,6 +130,20 @@ a {
     opacity: 0.4;
     height: 1720px;
     overflow: hidden;
+}
+
+.table-wrapper {
+    left: calc(20% + 40px);
+    width: 800px;
+    height: 800px;
+    position: fixed;
+    z-index: 5;
+}
+
+.table {
+    height: 100%;
+    width: 100%;
+    color: #f3f3f3;
 }
 
 .map-wrapper {
