@@ -1,3 +1,11 @@
+var getName = {
+    "name": "",
+    "1.5C": "1.5C",
+    "2C": "2C",
+    "3C": "3C",
+    "3.2C": "3.2C"
+}
+
 function tabulate(data, columns) {
     var table = d3.select(".table").append("table"),
         thead = table.append("thead"),
@@ -9,7 +17,11 @@ function tabulate(data, columns) {
         .data(columns)
         .enter()
         .append("th")
-            .text(function(column) { return column; });
+        .text(function(column) { 
+            return getName[column];
+        });
+
+    console.log(columns);
 
     // create a row for each object in the data
     var rows = tbody.selectAll("tr")
@@ -33,22 +45,28 @@ function tabulate(data, columns) {
 
 
 var species = [
-    { name: "Insects", onepointfive: "6%", two: "18%", threepointtwo: "49%"},
-    { name: "Plants", onepointfive: "8%", two: "16%", threepointtwo: "44%"},
-    { name: "Vertebrates", onepointfive: "4%", two: "8%", threepointtwo: "26%"}
+    { name: "Insects", "1.5C": "6%", "2C": "18%", "3.2C": "49%"},
+    { name: "Plants", "1.5C": "8%", "2C": "16%", "3.2C": "44%"},
+    { name: "Vertebrates", "1.5C": "4%", "2C": "8%", "3.2C": "26%"}
+];
+
+var rainfall = [
+    { name: "Extreme precipitation events (R99p)", "1.5C": "20%", "2C": "26%"},
+    { name: "Maximum 5-day rainfall total (RX5D)", "1.5C": "11%", "2C": "12%"},
+    { name: "Consecutive dry days (CDD)", "1.5C": "0%", "2C": "-5%"}
 ];
 
 // render the table
-var myTable = tabulate(species, ["name", "onepointfive", "two", "threepointtwo"]);
+var myTable = tabulate(species, ["name", "1.5C", "2C", "3.2C"]);
 
 // uppercase the column headers
-myTable.selectAll("thead th")
-    .text(function(column) {
-        return column.charAt(0).toUpperCase() + column.substr(1);
-    });
+// myTable.selectAll("thead th")
+//     .text(function(column) {
+//         return column.charAt(0).toUpperCase() + column.substr(1);
+//     });
 
-myTable.select("thead th")[0].remove();
-    
+function updateTable () {};
+
 // sort by age
 // myTable.selectAll("tbody tr")
 //     .sort(function(a, b) {
