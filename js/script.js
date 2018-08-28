@@ -98,16 +98,16 @@ $(function(){
 
         function triggerTableUpdate() {
 
-            var getData = (item.data.name).toLowerCase();
+            dataName = (item.data.name).toLowerCase();
 
-            console.log(getData);
+            // console.log(getData);
 
-            // to change string into variable name
-            newData = window[getData];
+            // change string into variable name
+            newData = window[dataName];
 
-            console.log(newData);
+            // console.log(newData);
 
-            updateTable(newData);
+            updateTable(newData, dataName);
 
         }
 

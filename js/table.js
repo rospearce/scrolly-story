@@ -134,7 +134,7 @@ function updateTable () {
 
     // update the column headers
 
-    dataName = "rainfall";
+    // dataName = "rainfall";
 
     // var getHeader = "get" + dataName.charAt(0).toUpperCase() + dataName.substr(1) + "Header";
 
