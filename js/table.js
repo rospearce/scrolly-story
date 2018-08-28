@@ -24,9 +24,9 @@ var getGDPHeader = {
 // objects
 
 var initial = [
-    { "name": "Placeholder", "1.5C": "6%", "2C": "18%", "3C": "49%"},
-    { "name": "Placeholder", "1.5C": "8%", "2C": "16%", "3C": "44%"},
-    { "name": "Placeholder", "1.5C": "4%", "2C": "8%", "3C": "26%"}
+    { "name": "", "1.5C": "", "2C": "", "3C": ""},
+    { "name": "", "1.5C": "", "2C": "", "3C": ""},
+    { "name": "", "1.5C": "", "2C": "", "3C": ""}
 ];
 
 var species = [
@@ -53,7 +53,7 @@ var t = d3.transition()
     .duration(3000)
     .ease(d3.easeLinear);
 
-// var columns = ["name", "1.5C", "2C", "3C"];
+var columns = ["name", "1.5C", "2C", "3C"];
 
 var table = d3.select(".table").append("table"),
     thead = table.append("thead"),
@@ -92,7 +92,7 @@ function tabulate(data, columns) {
 }
 
 // render the table
-var myTable = tabulate(initial, ["name", "1.5C", "2C", "3C"]);
+var myTable = tabulate(initial, columns);
 
 // bold the text of the first column
 myTable.selectAll('td:nth-child(1)')
@@ -100,11 +100,11 @@ myTable.selectAll('td:nth-child(1)')
 
 function updateTable () {
     
-    var rows = table.selectAll("tbody tr")
+    var rows = tbody.selectAll("tr")
     .data(newData, function (d) {return d.name;});
     
     rows.enter()
-    .append('tr')
+    .append("tr")
     .selectAll("td")
     .data(function (d) {return [d.name, d["1.5C"], d["2C"], d["3C"] ];})
     .enter()
