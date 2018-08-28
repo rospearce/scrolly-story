@@ -156,7 +156,18 @@ function updateTable () {
 
     // bold the text of the first column
     myTable.selectAll('td:nth-child(1)')
-    .style("font-weight", "bold");
+    .style("font-weight", "bold")
+    .style("padding-left", "0px")
+    .style("padding-right", "10px");
+
+    // change colour of column headers
+    myTable.selectAll('th:nth-child(2)')
+    .style("color", "#B4C7D1");
+    myTable.selectAll('th:nth-child(3)')
+    .style("color", "#BCABC6");
+    myTable.selectAll('th:nth-child(4)')
+    .style("color", "#C6A1AE");
+
 }
 
 // setTimeout(function(){
