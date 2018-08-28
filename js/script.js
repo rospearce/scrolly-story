@@ -15,9 +15,9 @@ $(function(){
 
     // build DOM from data
     var impacts=[{
-        name: "Background-1",
+        name: "background1",
     },{
-        name: "Background-2"
+        name: "background2"
     },{
         name: "SPECIES",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
@@ -111,7 +111,7 @@ $(function(){
 
         }
 
-        if(item.index > 1){
+        if(item.index > 0){
 
             triggerTableUpdate();
 

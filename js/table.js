@@ -23,7 +23,8 @@ var getGDPHeader = {
 
 // objects
 
-var initial = [
+// placeholder text to stop bug where from adding species data twice when scrolling up and down
+var background2 = [
     { "name": "", "1.5C": "", "2C": "", "3C": ""},
     { "name": "", "1.5C": "", "2C": "", "3C": ""},
     { "name": "", "1.5C": "", "2C": "", "3C": ""}
@@ -92,7 +93,7 @@ function tabulate(data, columns) {
 }
 
 // render the table
-var myTable = tabulate(initial, columns);
+var myTable = tabulate(background2, columns);
 
 // bold the text of the first column
 myTable.selectAll('td:nth-child(1)')
