@@ -22,7 +22,7 @@ $(function(){
         name: "SPECIES",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg",
-        map: "global"
+        map: "australia"
     },{
         name: "RAINFALL",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
