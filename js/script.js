@@ -94,6 +94,12 @@ $(function(){
         $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
         // console.log(item.data.map);
 
+        //update table
+
+        // newData = (item.data.name).toLowerCase();
+
+        // updateTable(newData);
+
         // item.el.removeClass('blur');
 
     }

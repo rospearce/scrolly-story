@@ -35,7 +35,7 @@ var data = [{
         {length: "200", across: "500"},
         {length: "1500", across: "500"}
     ]
-}]
+}] 
 
 // format data
 

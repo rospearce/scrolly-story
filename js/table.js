@@ -12,7 +12,20 @@ var getRainfallHeader = {
     "3C": ""
 }
 
+var getGDPHeader = {
+    "name": "",
+    "1.5C": "1.5C",
+    "2C": "2C",
+    "3C": ""
+}
+
 var newData;
+var dataName;
+
+var t1 = d3.transition()
+    .delay(1000)
+    .duration(3000)
+    .ease(d3.easeLinear);
 
 function tabulate(data, columns) {
 
@@ -64,9 +77,13 @@ var species = [
 ];
 
 var rainfall = [
-    { name: "Extreme precipitation events (R99p)", "1.5C": "20%", "2C": "26%", "3C": ""},
-    { name: "Maximum 5-day rainfall total (RX5D)", "1.5C": "11%", "2C": "12%", "3C": ""},
-    { name: "Consecutive dry days (CDD)", "1.5C": "0%", "2C": "-5%", "3C": ""}
+    { name: "Extreme precipitation events", "1.5C": "20%", "2C": "26%", "3C": ""},
+    { name: "Maximum 5-day rainfall total", "1.5C": "11%", "2C": "12%", "3C": ""},
+    { name: "Consecutive dry days", "1.5C": "0%", "2C": "-5%", "3C": ""}
+];
+
+var gdp = [
+    { name: "Global per capita GDP in 2100", "1.5C": "20%", "2C": "26%", "3C": ""},
 ];
 
 // render the table
@@ -82,7 +99,7 @@ var myTable = tabulate(species, ["name", "1.5C", "2C", "3C"]);
 myTable.selectAll('td:nth-child(1)')
 .style("font-weight", "bold");
 
-function updateTable (newData) {
+function updateTable () {
     
     var rows = myTable.selectAll("tbody tr")
     .data(newData, function (d) {return d.name;});
@@ -93,9 +110,13 @@ function updateTable (newData) {
     .data(function (d) {return [d.name, d["1.5C"], d["2C"], d["3C"] ];})
     .enter()
     .append("td")
-    .text(function(d) { return d; });
+    .style("opacity", 0)
+    .text(function(d) { return d; })
+    .transition(t1)
+    .style("opacity", 1);
     
-    rows.exit().remove();
+    rows.exit()
+    .remove();
     
     var cells = rows.selectAll('td')
     .data(function (d) {return d.name, d["1.5C"], d["2C"], d["3C"];})
@@ -103,9 +124,13 @@ function updateTable (newData) {
     
     cells.enter()
     .append("td")
-    .text(function(d) { return d; });
+    .style("opacity", 0)
+    .text(function(d) { return d; })
+    .transition(t1)
+    .style("opacity", 1);;
     
-    cells.exit().remove();
+    cells.exit()
+    .remove();
 
     // update the column headers
 
@@ -114,18 +139,27 @@ function updateTable (newData) {
     var getHeader = "get" + dataName.charAt(0).toUpperCase() + dataName.substr(1) + "Header";
 
     console.log(getHeader);
-
+    
+    // change column headers
     myTable.selectAll("thead th")
     .text(function(column) {
         if (dataName =="rainfall") {
             return getRainfallHeader[column];
-        } else {
-            //do nothing
+        } else if (dataName =="species")  {
+            return getSpeciesHeader[column];
+        } else if (dataName =="gdp")  {
+            return getGDPHeader[column];
         }
     });
+
+    // bold the text of the first column
+    myTable.selectAll('td:nth-child(1)')
+    .style("font-weight", "bold");
 }
 
 setTimeout(function(){
+
+// working but trying to trigger from scrolly now
 
     newData = rainfall;
 
