@@ -1,3 +1,5 @@
+// headers
+
 var getSpeciesHeader = {
     "name": "",
     "1.5C": "1.5C",
@@ -19,10 +21,28 @@ var getGDPHeader = {
     "3C": ""
 }
 
+// data
+
+var species = [
+    { name: "Insects", "1.5C": "6%", "2C": "18%", "3C": "49%"},
+    { name: "Plants", "1.5C": "8%", "2C": "16%", "3C": "44%"},
+    { name: "Vertebrates", "1.5C": "4%", "2C": "8%", "3C": "26%"}
+];
+
+var rainfall = [
+    { name: "Extreme precipitation events", "1.5C": "20%", "2C": "26%", "3C": ""},
+    { name: "Maximum 5-day rainfall total", "1.5C": "11%", "2C": "12%", "3C": ""},
+    { name: "Consecutive dry days", "1.5C": "0%", "2C": "-5%", "3C": ""}
+];
+
+var gdp = [
+    { name: "Global per capita GDP in 2100", "1.5C": "20%", "2C": "26%", "3C": ""},
+];
+
 var newData;
 var dataName;
 
-var t1 = d3.transition()
+var t = d3.transition()
     .delay(1000)
     .duration(3000)
     .ease(d3.easeLinear);
@@ -42,12 +62,6 @@ function tabulate(data, columns) {
         .text(function(column) { 
             return getSpeciesHeader[column];
         });
-
-    // console.log(columns);
-
-    // var headers = d3.selectAll('table').selectAll('th');
-
-    // console.log(headers);
 
     // create a row for each object in the data
     var rows = tbody.selectAll("tr")
@@ -69,31 +83,8 @@ function tabulate(data, columns) {
     return table;
 }
 
-
-var species = [
-    { name: "Insects", "1.5C": "6%", "2C": "18%", "3C": "49%"},
-    { name: "Plants", "1.5C": "8%", "2C": "16%", "3C": "44%"},
-    { name: "Vertebrates", "1.5C": "4%", "2C": "8%", "3C": "26%"}
-];
-
-var rainfall = [
-    { name: "Extreme precipitation events", "1.5C": "20%", "2C": "26%", "3C": ""},
-    { name: "Maximum 5-day rainfall total", "1.5C": "11%", "2C": "12%", "3C": ""},
-    { name: "Consecutive dry days", "1.5C": "0%", "2C": "-5%", "3C": ""}
-];
-
-var gdp = [
-    { name: "Global per capita GDP in 2100", "1.5C": "20%", "2C": "26%", "3C": ""},
-];
-
 // render the table
 var myTable = tabulate(species, ["name", "1.5C", "2C", "3C"]);
-
-// uppercase the column headers
-// myTable.selectAll("thead th")
-//     .text(function(column) {
-//         return column.charAt(0).toUpperCase() + column.substr(1);
-//     });
 
 // bold the text of the first column
 myTable.selectAll('td:nth-child(1)')
@@ -112,7 +103,7 @@ function updateTable () {
     .append("td")
     .style("opacity", 0)
     .text(function(d) { return d; })
-    .transition(t1)
+    .transition(t)
     .style("opacity", 1);
     
     rows.exit()
@@ -126,7 +117,7 @@ function updateTable () {
     .append("td")
     .style("opacity", 0)
     .text(function(d) { return d; })
-    .transition(t1)
+    .transition(t)
     .style("opacity", 1);;
     
     cells.exit()
@@ -134,7 +125,7 @@ function updateTable () {
 
     // update the column headers
 
-    var dataName = "rainfall";
+    dataName = "rainfall";
 
     var getHeader = "get" + dataName.charAt(0).toUpperCase() + dataName.substr(1) + "Header";
 
