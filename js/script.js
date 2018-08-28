@@ -100,6 +100,8 @@ $(function(){
 
             var getData = (item.data.name).toLowerCase();
 
+            console.log(getData);
+
             // to change string into variable name
             newData = window[getData];
 
@@ -112,6 +114,8 @@ $(function(){
         if(item.index > 1){
 
             triggerTableUpdate();
+
+            console.log("table update");
 
         }
 

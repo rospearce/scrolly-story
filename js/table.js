@@ -21,22 +21,28 @@ var getGDPHeader = {
     "3C": "3C"
 }
 
-// data
+// objects
+
+var initial = [
+    { "name": "Placeholder", "1.5C": "6%", "2C": "18%", "3C": "49%"},
+    { "name": "Placeholder", "1.5C": "8%", "2C": "16%", "3C": "44%"},
+    { "name": "Placeholder", "1.5C": "4%", "2C": "8%", "3C": "26%"}
+];
 
 var species = [
-    { name: "Insects", "1.5C": "6%", "2C": "18%", "3C": "49%"},
-    { name: "Plants", "1.5C": "8%", "2C": "16%", "3C": "44%"},
-    { name: "Vertebrates", "1.5C": "4%", "2C": "8%", "3C": "26%"}
+    { "name": "Insects", "1.5C": "6%", "2C": "18%", "3C": "49%"},
+    { "name": "Plants", "1.5C": "8%", "2C": "16%", "3C": "44%"},
+    { "name": "Vertebrates", "1.5C": "4%", "2C": "8%", "3C": "26%"}
 ];
 
 var rainfall = [
-    { name: "Extreme precipitation events", "1.5C": "20%", "2C": "26%", "3C": ""},
-    { name: "Maximum 5-day rainfall total", "1.5C": "11%", "2C": "12%", "3C": ""},
-    { name: "Consecutive dry days", "1.5C": "0%", "2C": "-5%", "3C": ""}
+    { "name": "Extreme precipitation events", "1.5C": "20%", "2C": "26%", "3C": ""},
+    { "name": "Maximum 5-day rainfall total", "1.5C": "11%", "2C": "12%", "3C": ""},
+    { "name": "Consecutive dry days", "1.5C": "0%", "2C": "-5%", "3C": ""}
 ];
 
 var gdp = [
-    { name: "Global per capita GDP in 2100", "1.5C": "20%", "2C": "26%", "3C": ""},
+    { "name": "Global per capita GDP in 2100", "1.5C": "20%", "2C": "26%", "3C": ""},
 ];
 
 var newData;
@@ -47,11 +53,13 @@ var t = d3.transition()
     .duration(3000)
     .ease(d3.easeLinear);
 
-function tabulate(data, columns) {
+// var columns = ["name", "1.5C", "2C", "3C"];
 
-    var table = d3.select(".table").append("table"),
-        thead = table.append("thead"),
-        tbody = table.append("tbody");
+var table = d3.select(".table").append("table"),
+    thead = table.append("thead"),
+    tbody = table.append("tbody");
+
+function tabulate(data, columns) {
 
     // append the header row
     thead.append("tr")
@@ -84,7 +92,7 @@ function tabulate(data, columns) {
 }
 
 // render the table
-var myTable = tabulate(species, ["name", "1.5C", "2C", "3C"]);
+var myTable = tabulate(initial, ["name", "1.5C", "2C", "3C"]);
 
 // bold the text of the first column
 myTable.selectAll('td:nth-child(1)')
@@ -92,7 +100,7 @@ myTable.selectAll('td:nth-child(1)')
 
 function updateTable () {
     
-    var rows = myTable.selectAll("tbody tr")
+    var rows = table.selectAll("tbody tr")
     .data(newData, function (d) {return d.name;});
     
     rows.enter()
