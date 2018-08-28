@@ -37,13 +37,13 @@ var species = [
 ];
 
 var rainfall = [
-    { "name": "Extreme precipitation events", "1.5C": "20%", "2C": "26%", "3C": ""},
-    { "name": "Maximum 5-day rainfall total", "1.5C": "11%", "2C": "12%", "3C": ""},
-    { "name": "Consecutive dry days", "1.5C": "0%", "2C": "-5%", "3C": ""}
+    { "name": "Extreme precipitation events", "1.5C": "<span class='arrow-up one'>&#9650;</span> 20%", "2C": "<span class='arrow-up two'>&#9650;</span> 26%", "3C": ""},
+    { "name": "Maximum 5-day rainfall total", "1.5C": "<span class='arrow-up one'>&#9650;</span> 11%", "2C": "<span class='arrow-up two'>&#9650;</span> 12%", "3C": ""},
+    { "name": "Consecutive dry days", "1.5C": "0%", "2C": "<span class='arrow-down two'>&#9660;</span> -5%", "3C": ""}
 ];
 
 var gdp = [
-    { "name": "Global per capita GDP in 2100", "1.5C": "20%", "2C": "26%", "3C": ""},
+    { "name": "Global per capita GDP in 2100", "1.5C": "<span class='arrow-down one'>&#9660;</span> -8%", "2C": "<span class='arrow-down two'>&#9660;</span> -13%", "3C": ""},
 ];
 
 var newData;
@@ -87,7 +87,7 @@ function tabulate(data, columns) {
         })
         .enter()
         .append("td")
-            .text(function(d) { return d.value; });
+        .html(function(d) { return d.value; });
     
     return table;
 }
@@ -111,7 +111,7 @@ function updateTable () {
     .enter()
     .append("td")
     .style("opacity", 0)
-    .text(function(d) { return d; })
+    .html(function(d) { return d; })
     .transition(t)
     .style("opacity", 1);
     
@@ -120,12 +120,12 @@ function updateTable () {
     
     var cells = rows.selectAll('td')
     .data(function (d) {return d.name, d["1.5C"], d["2C"], d["3C"];})
-    .text(function (d) {return d;});
+    .html(function (d) {return d;});
     
     cells.enter()
     .append("td")
     .style("opacity", 0)
-    .text(function(d) { return d; })
+    .html(function(d) { return d; })
     .transition(t)
     .style("opacity", 1);;
     

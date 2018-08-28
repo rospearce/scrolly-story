@@ -29,7 +29,7 @@ h1 {
     font-family: 'PT Sans Narrow';
     font-weight: normal;
     color: #ffffff;
-    font-size: 38px;
+    font-size: 42px;
 }
 
 h2 {
@@ -168,8 +168,29 @@ th {
 }
 
 td {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     padding-left: 20px;
+    font-size: 18px;
+}
+
+.arrow-down {
+    color: #212121;
+}
+
+.arrow-up {
+    color: #f3f3f3;
+}
+
+.one {
+    opacity: 0.3;
+}
+
+.two {
+    opacity: 0.6;
+}
+
+.three {
+    opacity: 0.9;
 }
 
 .map-wrapper {
@@ -177,14 +198,14 @@ td {
     top: 2120px;
     /* work out once know how many stories have */
     height: 1950px;
-    left: calc(10% + 40px);
+    left: calc(10% + 20px);
     width: 200px;
 }
 
 .map {
     position: sticky;
     top: 60%;
-    width: 240px;
+    width: 220px;
     height: 140px;
     z-index: 99999;
     background-image:url(../img/global.svg);
@@ -227,7 +248,7 @@ td {
 }
 
 .intro {
-    top: 190px;
+    top: 170px;
     left: calc(10% + 200px);
     /* margin-left: 20px; */
     max-width: 550px;
@@ -240,7 +261,7 @@ td {
 
 .moving {
     position: absolute;
-    top: calc(190px + 800px + 60px);
+    top: calc(190px + 800px + 40px);
 }
 
 li {
@@ -250,7 +271,7 @@ li {
 
 .droplinks {
     margin-left: 20px;
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 

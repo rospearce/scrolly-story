@@ -20,7 +20,7 @@ $(function(){
         name: "background2"
     },{
         name: "SPECIES",
-        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
+        text: "Proportion of species losing >50% of their climatic range",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg",
         map: "australia"
     },{
@@ -30,7 +30,7 @@ $(function(){
         map: "latin-america"
     },{
         name: "GDP",
-        text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
+        text: "Global per capita GDP in 2100 (relative to no additional warming)",
         background: "https://www.carbonbrief.org/wp-content/uploads/2015/07/Stock-wall-street-new-york-finance.jpg",
         map: "global"
     }];
