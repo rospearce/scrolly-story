@@ -14,25 +14,25 @@ var svg = d3.select("#lines").append("svg")
 var data = [{
     name: "Line 2",
     values: [
-        {length: "0", across: "100"},
-        {length: "150", across: "100"},
-        {length: "200", across: "300"},
+        {length: "100", across: "100"},
+        {length: "250", across: "100"},
+        {length: "300", across: "300"},
         {length: "1500", across: "300"}
     ]
 },{
     name: "Line 3",
     values: [
-        {length: "0", across: "100"},
-        {length: "150", across: "100"},
-        {length: "200", across: "400"},
+        {length: "100", across: "100"},
+        {length: "250", across: "100"},
+        {length: "300", across: "400"},
         {length: "1500", across: "400"}
     ]
 },{
     name: "Line 4",
     values: [
-        {length: "0", across: "100"},
-        {length: "150", across: "100"},
-        {length: "200", across: "500"},
+        {length: "100", across: "100"},
+        {length: "250", across: "100"},
+        {length: "300", across: "500"},
         {length: "1500", across: "500"}
     ]
 }] 
