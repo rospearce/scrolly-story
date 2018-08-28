@@ -149,6 +149,8 @@ function updateTable () {
             return getSpeciesHeader[column];
         } else if (dataName =="gdp")  {
             return getGDPHeader[column];
+        } else if (dataName =="background2")  {
+            return getSpeciesHeader[column];
         }
     });
 
