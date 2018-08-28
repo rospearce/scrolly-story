@@ -96,9 +96,24 @@ $(function(){
 
         //update table
 
-        // newData = (item.data.name).toLowerCase();
+        function triggerTableUpdate() {
 
-        // updateTable(newData);
+            var getData = (item.data.name).toLowerCase();
+
+            // to change string into variable name
+            newData = window[getData];
+
+            console.log(newData);
+
+            updateTable(newData);
+
+        }
+
+        if(item.index > 1){
+
+            triggerTableUpdate();
+
+        }
 
         // item.el.removeClass('blur');
 

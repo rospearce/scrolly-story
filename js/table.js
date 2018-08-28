@@ -18,7 +18,7 @@ var getGDPHeader = {
     "name": "",
     "1.5C": "1.5C",
     "2C": "2C",
-    "3C": ""
+    "3C": "3C"
 }
 
 // data
@@ -127,9 +127,9 @@ function updateTable () {
 
     dataName = "rainfall";
 
-    var getHeader = "get" + dataName.charAt(0).toUpperCase() + dataName.substr(1) + "Header";
+    // var getHeader = "get" + dataName.charAt(0).toUpperCase() + dataName.substr(1) + "Header";
 
-    console.log(getHeader);
+    // console.log(getHeader);
     
     // change column headers
     myTable.selectAll("thead th")
@@ -148,17 +148,17 @@ function updateTable () {
     .style("font-weight", "bold");
 }
 
-setTimeout(function(){
+// setTimeout(function(){
 
-// working but trying to trigger from scrolly now
+// // working but trying to trigger from scrolly now
 
-    newData = rainfall;
+//     newData = rainfall;
 
-    updateTable(newData);
+//     updateTable(newData);
 
-    console.log(newData);
+//     console.log(newData);
 
-}, 3000);
+// }, 3000);
 
 // sort by age
 // myTable.selectAll("tbody tr")
