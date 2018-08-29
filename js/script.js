@@ -52,10 +52,10 @@ $(function(){
             // $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
         } else if (item.index === 1) {
             // do nothing
-            $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
+            // $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
         } else if (item.index === 3) {
             // do nothing
-            $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
+            // $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
         } else {
             // item.el.css('background-color', '#333333');
             // $map.css( "background-image", "url('img/" + item.data.map + ".svg')");

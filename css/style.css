@@ -13,7 +13,7 @@ body {
     /* border-top:1px solid #141414; */
     padding-top: 30px;
     padding-bottom: 30px;
-    min-height: 800px;
+    min-height: 700px;
 }
 
 footer {
@@ -150,10 +150,10 @@ a {
 }
 
 .table-wrapper {
-    top: 1780px;
+    top: 1580px;
     left: calc(10% + 330px);
     width: 670px;
-    height: 2700px;
+    height: 2230px;
     position: absolute;
     z-index: 5;
 }
@@ -161,7 +161,7 @@ a {
 .table {
     top: 70px;
     width: 100%;
-    height: 800px;
+    height: 700px;
     color: #f3f3f3;
     position: sticky;
 }
@@ -211,9 +211,9 @@ td {
 
 .map-wrapper {
     position: absolute;
-    top: 2120px;
+    top: 1920px;
     /* work out once know how many stories have */
-    height: 2050px;
+    height: 1780px;
     left: calc(10% + 20px);
     width: 200px;
 }
@@ -242,28 +242,29 @@ td {
 }
 
 #lines-wrapper {
-    /* each story is 800px plus 30px of padding on all sides */
-    height: 3440px;
+    /* each story is 700px plus 30px of padding on all sides */
+    height: 3800px;
     /* decided to make fixed for now with break points */
     width: 1200px;
     left: 10%;
     z-index: 4;
+    position: absolute;
 }
 
-.lines-moving {
+/* .lines-moving {
     position: absolute;
 }
 
 .lines-fixed {
     position: fixed;
     top: -880px;
-}
+} */
 
 #lines {
     position: sticky;
     width: 100%;
     top: 0;
-    height: 2580px;
+    height: 3040px;
 }
 
 .line {
@@ -285,7 +286,7 @@ td {
 
 .moving {
     position: absolute;
-    top: calc(190px + 800px + 40px);
+    top: calc(190px + 700px + 40px);
 }
 
 li {

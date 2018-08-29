@@ -2,7 +2,7 @@
 var margin = {top: 210, right: 0, bottom: 0, left: 0},
 // calculate the width of the chart from the width of the line-wrapper
 width = parseInt(d3.select("#lines").style("width")) - margin.left - margin.right,
-height = 2580 - margin.top - margin.bottom;
+height = parseInt(d3.select("#lines").style("height")) - margin.top - margin.bottom;
 
 var svg = d3.select("#lines").append("svg")
     .attr("id", "svg-1")
@@ -14,26 +14,26 @@ var svg = d3.select("#lines").append("svg")
 var data = [{
     name: "Line 2",
     values: [
-        {length: "90", across: "100"},
-        {length: "250", across: "100"},
-        {length: "300", across: "300"},
-        {length: "1500", across: "300"}
+        {length: "80", across: "100"},
+        {length: "200", across: "100"},
+        {length: "250", across: "300"},
+        {length: "2000", across: "300"}
     ]
 },{
     name: "Line 3",
     values: [
-        {length: "90", across: "100"},
-        {length: "250", across: "100"},
-        {length: "300", across: "400"},
-        {length: "1500", across: "400"}
+        {length: "80", across: "100"},
+        {length: "200", across: "100"},
+        {length: "250", across: "400"},
+        {length: "2000", across: "400"}
     ]
 },{
     name: "Line 4",
     values: [
-        {length: "90", across: "100"},
-        {length: "250", across: "100"},
-        {length: "300", across: "500"},
-        {length: "1500", across: "500"}
+        {length: "80", across: "100"},
+        {length: "200", across: "100"},
+        {length: "250", across: "500"},
+        {length: "2000", across: "500"}
     ]
 }] 
 
