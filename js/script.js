@@ -7,7 +7,6 @@ $(function(){
     var $droplinks = $('.droplinks')
     var $gradient = $('.story-gradient')
     var $map = $('.map')
-    var $linesWrapper = $('#lines-wrapper')
     var windowHeight = $(window).height()
 
     var viewportHeight = window.innerHeight
@@ -46,16 +45,16 @@ $(function(){
         if(item.index === 0){
             // STICKY INTRO
             $intro.removeClass('moving').addClass('fixed');
-            // $lines.removeClass('lines-moving').addClass('fixed');
+
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-fixed').addClass('nav-moving');
-            // $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
+            
         } else if (item.index === 1) {
             // do nothing
-            // $linesWrapper.removeClass('lines-fixed').addClass('lines-moving');
+            
         } else if (item.index === 3) {
             // do nothing
-            // $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
+            
         } else {
             // item.el.css('background-color', '#333333');
             // $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
@@ -69,12 +68,11 @@ $(function(){
         if(item.index === 0){
             // STICKY INTRO
             $intro.removeClass('fixed').addClass('moving');
-            // STICKY Lines
-            // $lines.removeClass('fixed').addClass('lines-moving');
+
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-moving').addClass('nav-fixed');
         } else if (item.index === 1) {
-            // $linesWrapper.removeClass('lines-moving').addClass('lines-fixed');
+            
         } else {
             // item.el.css('background-color', '#333333');
         }
@@ -251,7 +249,39 @@ $(function(){
                     // $droplinks.css({ 'visibility': 'visible' });
                 }
 
-                // FADE ELEMENTS IN AND OUT
+                // FADE STORY CONTENT AT BOTTOM OF PAGE
+
+                // NOT WORKING
+
+                var windowBottom = scrollTop + $(this).innerHeight();
+
+                // console.log(windowBottom);
+
+                $('.story-content').each(function() {
+
+                    var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+                    if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+
+
+                        var calc3 = (windowBottom - objectBottom) / range;
+
+
+                        $(this).css({ 'opacity': calc3 });
+
+                        if (calc3 > '1') {
+                            $(this).css({ 'opacity': 1 });
+                        } else if ( calc3 < '0' ) {
+                            $(this).css({ 'opacity': 0 });
+                        } else if (calc3 > '0') {
+                            // do nothing
+                        }
+
+                    }
+
+                })
+
+
             
             });
 

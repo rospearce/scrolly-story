@@ -76,6 +76,7 @@ a {
     max-width: 350px;
     margin-right: 20px;
     z-index: 6;
+    opacity: 0;
 }
 
 .story-content p {
@@ -251,14 +252,6 @@ td {
     position: absolute;
 }
 
-/* .lines-moving {
-    position: absolute;
-}
-
-.lines-fixed {
-    position: fixed;
-    top: -880px;
-} */
 
 #lines {
     position: sticky;
