@@ -36,8 +36,16 @@ h2 {
     font-family: 'PT Sans', sans-serif;
     font-weight: normal;
     color: #f1f1f1;
-    margin-bottom: 50px;
+    margin-bottom: 55px;
     font-size: 30px;
+}
+
+.title-span {
+    background-color: rgba(74, 106, 124, 0.9);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 h3 {
@@ -65,7 +73,7 @@ a {
     left: 10%;
     margin-left: 30px;
     margin-top: 50px;
-    max-width: 360px;
+    max-width: 350px;
     margin-right: 20px;
     z-index: 5;
 }
@@ -402,6 +410,15 @@ a:link {
     visibility: hidden;
     position: absolute;
     max-width: 200px;
+    font-size: 14px;
+    background-color: rgba(74, 106, 124, 0.9);
+    border-radius: 5px;
+    z-index: 999999;
+}
+
+.tooltip p {
+    margin: 5px;
+    font-family: "PT Sans", sans-serif;
 }
 
 /* example of how to style the text with CSS */

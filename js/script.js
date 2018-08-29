@@ -123,8 +123,8 @@ $(function(){
 
         $(".fa-info-circle").on("mouseover", function(event) {
 
-            var x = event.pageX + 10;
-            var y = event.pageY;
+            var x = event.pageX - 100;
+            var y = event.pageY + 20;
             var info = item.data.info;
 
             $(".tooltip").html("<p>" + info + "</p>");
@@ -133,6 +133,10 @@ $(function(){
                 "left": x,
                 "visibility": "visible"
             });
+        })
+
+        $(".fa-info-circle").on("mouseout", function() {
+            $(".tooltip").css("visibility", "hidden");
         })
 
         // item.el.removeClass('blur');
@@ -165,11 +169,11 @@ $(function(){
  
                 // build impacts from data
                 item.el.append(
-                    "<div class='story-mask'><div class='story-content'><h2><i class='"
+                    "<div class='story-mask'><div class='story-content'><h2><span class='title-span'><i class='"
                     + item.data.icon +
                     "'></i>   " 
                     + item.data.name 
-                    + "</h2><p>" 
+                    + "</span></h2><p>" 
                     + item.data.text 
                     + " <i class='fas fa-info-circle'></i></p></div></div>"
                 );
