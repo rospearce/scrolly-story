@@ -9,7 +9,7 @@ body {
     background-color: #141414;
 }
 
-.example > div {
+.scrolly > div {
     /* border-top:1px solid #141414; */
     padding-top: 30px;
     padding-bottom: 30px;
@@ -75,7 +75,12 @@ a {
     margin-top: 50px;
     max-width: 350px;
     margin-right: 20px;
-    z-index: 5;
+    z-index: 6;
+}
+
+.story-content p {
+    background-color: rgba(74, 106, 124, 0.5);
+    padding: 7px;
 }
 
 .story-mask {
@@ -226,7 +231,7 @@ td {
     top: 60%;
     width: 200px;
     height: 140px;
-    z-index: 99999;
+    z-index: 5;
     background-image:url(../img/global.svg);
     background-repeat: no-repeat;
 }
