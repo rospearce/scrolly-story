@@ -398,6 +398,12 @@ a:link {
     top: calc(50% - 20px);
 }
 
+.tooltip {
+    visibility: hidden;
+    position: absolute;
+    max-width: 200px;
+}
+
 /* example of how to style the text with CSS */
 
 /* .story{

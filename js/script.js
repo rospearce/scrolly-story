@@ -106,12 +106,8 @@ $(function(){
 
             dataName = (item.data.name).toLowerCase();
 
-            // console.log(getData);
-
             // change string into variable name
             newData = window[dataName];
-
-            // console.log(newData);
 
             updateTable(newData, dataName);
 
@@ -121,9 +117,23 @@ $(function(){
 
             triggerTableUpdate();
 
-            console.log("table update");
-
         }
+
+        // SHOW EXTRA INFO ON MOUSEOVER
+
+        $(".fa-info-circle").on("mouseover", function(event) {
+
+            var x = event.pageX + 10;
+            var y = event.pageY;
+            var info = item.data.info;
+
+            $(".tooltip").html("<p>" + info + "</p>");
+            $(".tooltip").css({
+                "top": y,
+                "left": x,
+                "visibility": "visible"
+            });
+        })
 
         // item.el.removeClass('blur');
 
