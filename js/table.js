@@ -133,14 +133,6 @@ function updateTable () {
     .remove();
 
     // update the column headers
-
-    // dataName = "rainfall";
-
-    // var getHeader = "get" + dataName.charAt(0).toUpperCase() + dataName.substr(1) + "Header";
-
-    // console.log(getHeader);
-    
-    // change column headers
     myTable.selectAll("thead th")
     .text(function(column) {
         if (dataName =="rainfall") {
@@ -156,9 +148,7 @@ function updateTable () {
 
     // bold the text of the first column
     myTable.selectAll('td:nth-child(1)')
-    .style("font-weight", "bold")
-    .style("padding-left", "0px")
-    .style("padding-right", "10px");
+    .attr("class", "row-header");
 
     // change colour of column headers
     myTable.selectAll('th:nth-child(2)')
