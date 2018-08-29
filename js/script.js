@@ -20,16 +20,19 @@ $(function(){
         name: "background2"
     },{
         name: "SPECIES",
+        icon: "fas fa-paw",
         text: "Proportion of species losing >50% of their climatic range",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg",
         map: "australia"
     },{
         name: "RAINFALL",
+        icon: "fas fa-tint",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/01/C5T9H7-rainfall.jpg",
         map: "latin-america"
     },{
         name: "GDP",
+        icon: "fas fa-dollar-sign",
         text: "Global per capita GDP in 2100 (relative to no additional warming)",
         background: "https://www.carbonbrief.org/wp-content/uploads/2015/07/Stock-wall-street-new-york-finance.jpg",
         map: "global"
@@ -149,7 +152,9 @@ $(function(){
  
                 // build impacts from data
                 item.el.append(
-                    "<div class='story-mask'><div class='story-content'><h2>" 
+                    "<div class='story-mask'><div class='story-content'><h2><i class='"
+                    + item.data.icon +
+                    "'></i>  " 
                     + item.data.name 
                     + "</h2><p>" 
                     + item.data.text 
