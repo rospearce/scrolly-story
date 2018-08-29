@@ -36,6 +36,8 @@ h2 {
     font-family: 'PT Sans', sans-serif;
     font-weight: normal;
     color: #f1f1f1;
+    margin-bottom: 50px;
+    font-size: 30px;
 }
 
 h3 {
@@ -62,10 +64,10 @@ a {
     position: relative;
     left: 10%;
     margin-left: 30px;
-    margin-top: 40px;
+    margin-top: 50px;
     max-width: 360px;
     margin-right: 20px;
-    /* z-index: 3333; */
+    z-index: 5;
 }
 
 .story-mask {
@@ -161,7 +163,7 @@ td, th {
 
 th {
     text-align: left;
-    padding-bottom: 50px;
+    padding-bottom: 45px;
     font-family: "PT Sans Narrow";
     font-weight: bold;
     font-size: 42px;
@@ -201,6 +203,14 @@ td {
     height: 2050px;
     left: calc(10% + 20px);
     width: 200px;
+}
+
+.fa-info-circle {
+    opacity: 0.7;
+}
+
+.fa-info-circle:hover {
+    opacity: 1;
 }
 
 .map {

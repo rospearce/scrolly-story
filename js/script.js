@@ -21,19 +21,22 @@ $(function(){
     },{
         name: "SPECIES",
         icon: "fas fa-paw",
-        text: "Proportion of species losing >50% of their climatic range",
+        text: "Proportion of species losing >50% of their climatic range.",
+        info: "Extra info 1 - Lorem ipsum dolor sit amet",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg",
         map: "australia"
     },{
         name: "RAINFALL",
         icon: "fas fa-tint",
+        info: "Extra info 2 - Lorem ipsum dolor sit amet",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/01/C5T9H7-rainfall.jpg",
         map: "latin-america"
     },{
         name: "GDP",
         icon: "fas fa-dollar-sign",
-        text: "Global per capita GDP in 2100 (relative to no additional warming)",
+        info: "Extra info 3 - Lorem ipsum dolor sit amet",
+        text: "Global per capita GDP in 2100 (relative to no additional warming).",
         background: "https://www.carbonbrief.org/wp-content/uploads/2015/07/Stock-wall-street-new-york-finance.jpg",
         map: "global"
     }];
@@ -154,11 +157,11 @@ $(function(){
                 item.el.append(
                     "<div class='story-mask'><div class='story-content'><h2><i class='"
                     + item.data.icon +
-                    "'></i>  " 
+                    "'></i>   " 
                     + item.data.name 
                     + "</h2><p>" 
                     + item.data.text 
-                    + "</p></div></div>"
+                    + " <i class='fas fa-info-circle'></i></p></div></div>"
                 );
 
                 // add their background images
