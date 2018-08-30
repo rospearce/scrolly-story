@@ -236,7 +236,7 @@ td {
 
 .map {
     position: sticky;
-    top: 60%;
+    top: 50%;
     width: 200px;
     height: 140px;
     z-index: 5;
@@ -425,6 +425,23 @@ a:link {
 .tooltip p {
     margin: 5px;
     font-family: "PT Sans", sans-serif;
+}
+
+.logo {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 9000;
+    height: 45px;
+    width: 150px;
+    background-image:url(../img/logo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.65;
+}
+
+.logo:hover {
+    opacity: 1;
 }
 
 /* example of how to style the text with CSS */
