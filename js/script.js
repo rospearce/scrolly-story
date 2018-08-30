@@ -4,6 +4,8 @@ $(function(){
     // variables
     var $intro = $('.intro')
     var $sideNav = $('.side-nav')
+    var $arrowUp = $('.up')
+    var $arrowDown = $('.down')
     var $droplinks = $('.droplinks')
     var $gradient = $('.story-gradient')
     var $map = $('.map')
@@ -80,18 +82,16 @@ $(function(){
 
     var focusEvents = function (ev, item) {
 
-        // change css of map
-        // $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
-
         // SIDE NAV STYLING
         // remove previous styling
         $('li', $sideNav).removeClass('nav-active');
+
         // as don't need any styling on first story
         if(item.index > 0){
             // the .eq() method reduces the set of matched elements to the one at the specified index.
             $('li', $sideNav).eq(item.index - 1).addClass('nav-active');
         }
-        // log the founding dates as you go past
+        
         console.log(item.data.name + ", is now active!");
 
         // change css of map
@@ -121,12 +121,12 @@ $(function(){
 
         $(".fa-info-circle").on("mouseover", function(event) {
 
-            var x = event.pageX - 100;
-            var y = event.pageY + 20;
+            var x = event.pageX - 105;
+            var y = event.pageY + 30;
             var info = item.data.info;
 
             $(".tooltip").html("<p>" + info + "</p>");
-            $(".tooltip").css({
+            $(".tooltip-wrapper").css({
                 "top": y,
                 "left": x,
                 "visibility": "visible"
@@ -134,7 +134,7 @@ $(function(){
         })
 
         $(".fa-info-circle").on("mouseout", function() {
-            $(".tooltip").css("visibility", "hidden");
+            $(".tooltip-wrapper").css("visibility", "hidden");
         })
 
         // item.el.removeClass('blur');
@@ -207,6 +207,30 @@ $(function(){
                 // +1 since not counting title
                 that.index($('li', $sideNav).index($(this)) + 1);
             });
+
+
+            $arrowUp.on('click', function() {
+
+                // find which nav circle is active
+                var active = $('li.nav-active').index();
+
+                // move the scrolly up one
+                // don't need to subtract since not counting title
+                that.index(active);
+
+            });
+
+            $arrowDown.on('click', function() {
+
+                // find which nav circle is active
+                var active = $('li.nav-active').index();
+
+                // move the scrolly down one
+                that.index(active + 2);
+
+            });
+
+
 
             // SCROLL ACTIONS
 
