@@ -176,8 +176,10 @@ $(function(){
             // actually better to build all the items in the same way so that can manipulate the behaviour of all?
             if(item.index === 0) {
                 // don't append anything
+                item.el.height("500").css("min-height", "300px");
             } else if (item.index === 1) {
                 // don't append anything
+                item.el.height("300").css("min-height", "300px");
             } else {
  
                 // build impacts from data
