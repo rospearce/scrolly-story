@@ -382,7 +382,7 @@ a:link {
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 4px;
+    margin-left: 3px;
     opacity: 0.7;
 }
 
@@ -469,6 +469,13 @@ a:link {
 
 .logo:hover {
     opacity: 1;
+}
+
+.share-icons {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9000;
 }
 
 /* example of how to style the text with CSS */

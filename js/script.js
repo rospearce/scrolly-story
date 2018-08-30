@@ -9,6 +9,7 @@ $(function(){
     var $droplinks = $('.droplinks')
     var $gradient = $('.story-gradient')
     var $map = $('.map')
+    var $home = $('.logo')
     var windowHeight = $(window).height()
 
     var viewportHeight = window.innerHeight
@@ -91,6 +92,20 @@ $(function(){
             // the .eq() method reduces the set of matched elements to the one at the specified index.
             $('li', $sideNav).eq(item.index - 1).addClass('nav-active');
         }
+
+        // hide top arrow when at top
+        if (item.index < 2) {
+            $arrowUp.css("visibility", "hidden");
+        } else {
+            $arrowUp.css("visibility", "visible");
+        }
+
+        // hide down arrow when at bottom
+        if (item.index > 3) {
+            $arrowDown.css("visibility", "hidden");
+        } else {
+            $arrowDown.css("visibility", "visible");
+        }
         
         console.log(item.data.name + ", is now active!");
 
@@ -98,7 +113,7 @@ $(function(){
         $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
         // console.log(item.data.map);
 
-        //update table
+        // UPDATE TABLE
 
         function triggerTableUpdate() {
 
@@ -255,9 +270,8 @@ $(function(){
                     $droplinks.css({ 'opacity': 1 });
                 } else if ( calc2 < '0' ) {
                     $droplinks.css({ 'opacity': 0 });
-                    // $droplinks.css({ 'visibility': 'hidden' });
                 } else if (calc2 > '0') {
-                    // $droplinks.css({ 'visibility': 'visible' });
+                    // do nothing
                 }
 
                 // BRING IN GRADIENT BACKGROUND
@@ -268,14 +282,11 @@ $(function(){
                     $gradient.css({ 'opacity': 0 });
                 } else if ( calc2 < '0' ) {
                     $gradient.css({ 'opacity': 1 });
-                    // $droplinks.css({ 'visibility': 'hidden' });
                 } else if (calc2 > '0') {
-                    // $droplinks.css({ 'visibility': 'visible' });
+                    // do nothing
                 }
 
                 // FADE STORY CONTENT AT BOTTOM OF PAGE
-
-                // NOT WORKING
 
                 var windowBottom = scrollTop + $(this).innerHeight();
 
