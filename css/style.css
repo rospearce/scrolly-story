@@ -226,9 +226,9 @@ td {
 
 .map-wrapper {
     position: absolute;
-    top: 1870px;
+    top: 1370px;
     /* work out once know how many stories have */
-    height: 1680px;
+    height: 1580px;
     left: calc(10% + 20px);
     width: 200px;
 }

@@ -9,7 +9,6 @@ $(function(){
     var $droplinks = $('.droplinks')
     var $gradient = $('.story-gradient')
     var $map = $('.map')
-    var $home = $('.logo')
     var windowHeight = $(window).height()
 
     var viewportHeight = window.innerHeight
@@ -46,14 +45,13 @@ $(function(){
     var enterEvents = function (ev, item) {
         
         if(item.index === 0){
-            // STICKY INTRO
-            // $intro.removeClass('moving').addClass('fixed');
 
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-fixed').addClass('nav-moving');
             
         } else if (item.index === 1) {
-            // do nothing
+            // play video after the second background enters
+            playVid();
             
         } else if (item.index === 3) {
             // do nothing
@@ -69,12 +67,13 @@ $(function(){
     var exitEvents = function (ev, item) {
 
         if(item.index === 0){
-            // STICKY INTRO
-            // $intro.removeClass('fixed').addClass('moving');
 
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-moving').addClass('nav-fixed');
         } else if (item.index === 1) {
+
+            // pause video after the second background exits
+            pauseVid();
             
         } else {
             // item.el.css('background-color', '#333333');
@@ -339,3 +338,15 @@ $(document).ready(function(){
     $('body').animate({scrollTop:0}, 1);
     // $droplinks.css({ 'visibility': 'visible' });
 });
+
+// functions to pause and play the top video
+
+var vid = document.getElementById("intro-vid"); 
+
+function playVid() { 
+    vid.play(); 
+} 
+
+function pauseVid() { 
+    vid.pause(); 
+}
