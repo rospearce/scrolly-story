@@ -46,12 +46,14 @@ $(function(){
         
         if(item.index === 0){
 
-            // STICKY SIDE NAV
-            $sideNav.removeClass('nav-fixed').addClass('nav-moving');
+            
             
         } else if (item.index === 1) {
             // play video after the second background enters
             playVid();
+
+            // STICKY SIDE NAV
+            $sideNav.removeClass('nav-fixed').addClass('nav-moving');
             
         } else if (item.index === 3) {
             // do nothing
@@ -68,9 +70,10 @@ $(function(){
 
         if(item.index === 0){
 
+        } else if (item.index === 1) {
+
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-moving').addClass('nav-fixed');
-        } else if (item.index === 1) {
 
             // pause video after the second background exits
             pauseVid();

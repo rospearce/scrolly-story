@@ -431,7 +431,7 @@ a:link {
 
 .nav-moving {
     position: absolute;
-    top: calc(500px + 40% + 60px);
+    top: calc(800px + 40% + 120px);
 }
 
 .nav-fixed {
