@@ -491,6 +491,14 @@ a:link {
     top: 10px;
     right: 10px;
     z-index: 9000;
+    color: #ffffff;
+    opacity: 0.4;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.share-icons:hover {
+    opacity: 1;
 }
 
 .credit {
