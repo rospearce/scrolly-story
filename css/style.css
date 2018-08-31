@@ -158,7 +158,7 @@ a {
 }
 
 .table-wrapper {
-    top: 1480px;
+    top: 985px;
     left: calc(10% + 330px);
     width: 670px;
     height: 2080px;
@@ -258,7 +258,7 @@ td {
 
 #lines-wrapper {
     /* each story is 650px plus 30px of padding on all sides */
-    height: 3550px;
+    height: 3050px;
     /* decided to make fixed for now with break points */
     width: 1200px;
     left: 10%;
@@ -279,22 +279,30 @@ td {
     fill: none;
 }
 
-.intro {
-    top: 170px;
-    left: calc(10% + 200px);
+.intro-wrapper {
+    top: 160px;
+    left: calc(10% + 170px);
     /* margin-left: 20px; */
     max-width: 550px;
     z-index: 999999;
+    position: absolute;
+    height: 370px;
 }
 
-.fixed {
+.intro {
+    top: 190px;
+    position: sticky;
+    /* margin-left: 20px; */
+}
+
+/* .fixed {
     position: fixed;
 }
 
 .moving {
     position: absolute;
-    top: calc(190px + 650px + 40px);
-}
+    top: calc(190px + 500px + 40px);
+} */
 
 li {
     list-style-type: none;

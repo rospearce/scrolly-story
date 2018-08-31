@@ -47,7 +47,7 @@ $(function(){
         
         if(item.index === 0){
             // STICKY INTRO
-            $intro.removeClass('moving').addClass('fixed');
+            // $intro.removeClass('moving').addClass('fixed');
 
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-fixed').addClass('nav-moving');
@@ -70,7 +70,7 @@ $(function(){
 
         if(item.index === 0){
             // STICKY INTRO
-            $intro.removeClass('fixed').addClass('moving');
+            // $intro.removeClass('fixed').addClass('moving');
 
             // STICKY SIDE NAV
             $sideNav.removeClass('nav-moving').addClass('nav-fixed');
@@ -252,6 +252,7 @@ $(function(){
             // SCROLL ACTIONS
 
             var range = 200;
+            var range2 = 400;
 
             $(window).on('scroll', function () {
             
@@ -260,7 +261,7 @@ $(function(){
                 // height = windowHeight.outerHeight(),
                 offset = windowHeight / 1.8,
                 // for bringing items in
-                calc1 = (scrollTop - offset + range) / range;
+                calc1 = (scrollTop - offset + range2) / range2;
                 // for fading items away
                 calc2 = 1 - calc1;
 
