@@ -99,7 +99,7 @@ $(function(){
         }
 
         // hide top arrow when at top
-        if (item.index < 2) {
+        if (item.index < 3) {
             $arrowUp.css("visibility", "hidden");
         } else {
             $arrowUp.css("visibility", "visible");
@@ -249,7 +249,7 @@ $(function(){
 
                 // move the scrolly up one
                 // don't need to subtract since not counting title
-                that.index(active);
+                that.index(active + 1);
 
             });
 
@@ -259,7 +259,7 @@ $(function(){
                 var active = $('li.nav-active').index();
 
                 // move the scrolly down one
-                that.index(active + 2);
+                that.index(active + 3);
 
             });
 
