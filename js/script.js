@@ -87,9 +87,9 @@ $(function(){
         $('li', $sideNav).removeClass('nav-active');
 
         // as don't need any styling on first story
-        if(item.index > 0){
+        if(item.index > 1){
             // the .eq() method reduces the set of matched elements to the one at the specified index.
-            $('li', $sideNav).eq(item.index - 1).addClass('nav-active');
+            $('li', $sideNav).eq(item.index - 2).addClass('nav-active');
         }
 
         // hide top arrow when at top
@@ -221,7 +221,7 @@ $(function(){
             // SET UP SIDE NAV
             $sideNav.on('click', 'li', function() {
                 // +1 since not counting title
-                that.index($('li', $sideNav).index($(this)) + 1);
+                that.index($('li', $sideNav).index($(this)) + 2);
             });
 
 
@@ -339,7 +339,7 @@ $(document).ready(function(){
     // $droplinks.css({ 'visibility': 'visible' });
 });
 
-// functions to pause and play the top video
+// functions to pause and play the top video - can't use JQuery
 
 var vid = document.getElementById("intro-vid"); 
 
