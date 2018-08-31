@@ -40,6 +40,9 @@ $(function(){
         text: "Global per capita GDP in 2100 (relative to no additional warming).",
         background: "https://www.carbonbrief.org/wp-content/uploads/2015/07/Stock-wall-street-new-york-finance.jpg",
         map: "global"
+    },{
+        icon: "fas fa-info-circle",
+        text: "Interactive by <a href='https://www.carbonbrief.org/author/rospearce' >Rosamund Pearce</a> with data compiled by <a href='https://www.carbonbrief.org/author/robertmcsweeney' target='_blank'>Robert McSweeney</a> for <a href='https://www.carbonbrief.org/'>Carbon Brief</a>. Licensed under <a href='https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode'>Creative Commons.</a>",
     }];
 
     var enterEvents = function (ev, item) {
@@ -128,7 +131,7 @@ $(function(){
 
         }
 
-        if(item.index > 0){
+        if(item.index > 0 && item.index < 5){
 
             triggerTableUpdate();
 
@@ -136,7 +139,7 @@ $(function(){
 
         // SHOW EXTRA INFO ON MOUSEOVER
 
-        $(".fa-info-circle").on("mouseover", function(event) {
+        $("p .fa-info-circle").on("mouseover", function(event) {
 
             var x = event.pageX - 105;
             var y = event.pageY + 30;
@@ -154,7 +157,6 @@ $(function(){
             $(".tooltip-wrapper").css("visibility", "hidden");
         })
 
-        // item.el.removeClass('blur');
 
     }
 
@@ -182,11 +184,11 @@ $(function(){
             } else if (item.index === 1) {
                 // don't append anything
                 item.el.height("300").css("min-height", "300px");
-            } else {
+            } else if (item.index > 1 && item.index < 5) {
  
                 // build impacts from data
                 item.el.append(
-                    "<div class='story-mask'><div class='story-content'><h2><span class='title-span'><i class='"
+                    "<div class='story-mask'><div class='story-content main'><h2><span class='title-span'><i class='"
                     + item.data.icon +
                     "'></i>   " 
                     + item.data.name 
@@ -202,12 +204,24 @@ $(function(){
                     "background-repeat": "no-repeat",
                     "background-size": "cover"
                 });
+            } else if (item.index === 5) {
+
+                // reduce height of credit
+                item.el.height("500").css("min-height", "300px");
+
+                // build credit
+                item.el.append(
+                    "<div class='story-mask'><div class='story-content footer'><h2><span class='title-span'><i class='"
+                    + item.data.icon +
+                    "'></i></span></h2><p class='credit'>" 
+                    + item.data.text 
+                    + "</p></div></div>"
+                );
+
             }
         },
         itemfocus: focusEvents,
         itemblur: blurEvents,
-        // containerscroll: handleContainerScroll,
-        // throttleType: 'debounce',
         triggerOffset: halfViewportHeight, // seems to set the active story at a more sensible position
         itementerviewport: enterEvents,
         itemexitviewport: exitEvents,
@@ -254,7 +268,7 @@ $(function(){
             // SCROLL ACTIONS
 
             var range = 200;
-            var range2 = 400;
+            var range2 = 350;
 
             $(window).on('scroll', function () {
             
@@ -297,7 +311,7 @@ $(function(){
 
                 // console.log(windowBottom);
 
-                $('.story-content').each(function() {
+                $('.story-content.main').each(function() {
 
                     var objectBottom = $(this).offset().top + $(this).outerHeight();
 

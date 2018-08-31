@@ -15,25 +15,31 @@ var data = [{
     name: "Line 2",
     values: [
         {length: "80", across: "100"},
-        {length: "200", across: "100"},
-        {length: "250", across: "300"},
-        {length: "2000", across: "300"}
+        {length: "230", across: "100"},
+        {length: "280", across: "300"},
+        {length: "1690", across: "300"},
+        {length: "1740", across: "100"},
+        {length: "1820", across: "100"}
     ]
 },{
     name: "Line 3",
     values: [
         {length: "80", across: "100"},
-        {length: "200", across: "100"},
-        {length: "250", across: "400"},
-        {length: "2000", across: "400"}
+        {length: "230", across: "100"},
+        {length: "280", across: "400"},
+        {length: "1690", across: "400"},
+        {length: "1740", across: "100"},
+        {length: "1820", across: "100"}
     ]
 },{
     name: "Line 4",
     values: [
         {length: "80", across: "100"},
-        {length: "200", across: "100"},
-        {length: "250", across: "500"},
-        {length: "2000", across: "500"}
+        {length: "230", across: "100"},
+        {length: "280", across: "500"},
+        {length: "1690", across: "500"},
+        {length: "1740", across: "100"},
+        {length: "1820", across: "100"}
     ]
 }] 
 
@@ -55,7 +61,7 @@ var y = d3.scaleLinear()
     .range([0, height]);
 
 x.domain([0, 600]);
-y.domain([0, 1500]);
+y.domain([0, 2000]);
 
 // define the line
 var line = d3.line()
