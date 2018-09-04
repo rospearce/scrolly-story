@@ -114,9 +114,11 @@ $(function(){
         
         console.log(item.data.name + ", is now active!");
 
-        // change css of map
-        $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
-        // console.log(item.data.map);
+        // UPDATE MAP
+
+        if (item.index < 5 && item.index > 1) {
+            $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
+        }
 
         // UPDATE TABLE
 
