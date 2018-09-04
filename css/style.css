@@ -173,7 +173,7 @@ a {
     height: 650px;
     color: #f3f3f3;
     position: sticky;
-    opacity: 0;
+    opacity:0;
 }
 
 table {
