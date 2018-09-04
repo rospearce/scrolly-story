@@ -64,6 +64,7 @@ h3 {
 p {
     font-family: 'PT Serif', serif;
     color: #e6e6e6;
+    line-height: 1.7em;
 }
 
 a {
@@ -449,7 +450,7 @@ a:link {
 }
 
 .tooltip {
-    background-color: rgba(74, 106, 124, 0.6);
+    background-color: rgba(74, 106, 124, 0.95);
     width: 220px;
     font-size: 13.5px;
 }
@@ -459,7 +460,7 @@ a:link {
     height: 0; 
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-bottom: 7px solid rgba(74, 106, 124, 0.6);
+    border-bottom: 7px solid rgba(74, 106, 124, 0.95);
     position: absolute;
     right: calc(50% - 7px);
     top: -2px;
@@ -507,8 +508,14 @@ a:link {
 }
 
 .credit {
-    width: 350px;
+    width: 320px;
+    background-color: rgba(74, 106, 124, 0) !important;
+    padding-left: 0px !important;
 }
+
+/* .credit p {
+    background-color: rgba(74, 106, 124, 0) !important;
+} */
 
 .footer {
     left: calc((100% - 1000px)/2);
@@ -522,7 +529,15 @@ a:link {
 }
 
 .credit a {
-    color: #afafaf;
+    color: #ffffff;
+    background-color: rgba(74, 106, 124, 0.5);
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.credit a:hover {
+    /* color: #afafaf; */
+    text-decoration: underline;
 }
 
 /* example of how to style the text with CSS */

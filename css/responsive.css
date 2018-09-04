@@ -99,6 +99,10 @@
         font-size: 40px;
     }
 
+    .row-header {
+        font-size: 16px;
+    }
+
     td {
         font-size: 18px;
         padding-left: 17px;
@@ -174,6 +178,10 @@
         font-size: 38px;
     }
 
+    .row-header {
+        font-size: 15px;
+    }
+
     td {
         font-size: 17px;
         padding-left: 15px;
@@ -242,6 +250,10 @@
     th {
         padding-left: 10px;
         font-size: 36px;
+    }
+
+    .row-header {
+        font-size: 14px;
     }
 
     td {
@@ -320,6 +332,10 @@
     th {
         padding-left: 7px;
         font-size: 33px;
+    }
+
+    .row-header {
+        font-size: 13.5px;
     }
 
     td {
