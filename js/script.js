@@ -309,17 +309,13 @@ $(function(){
 
                 var windowBottom = scrollTop + $(this).innerHeight();
 
-                // console.log(windowBottom);
-
                 $('.story-content.main').each(function() {
 
                     var objectBottom = $(this).offset().top + $(this).outerHeight();
 
                     if (objectBottom < windowBottom) { //object comes into view (scrolling down)
 
-
                         var calc3 = (windowBottom - objectBottom) / range;
-
 
                         $(this).css({ 'opacity': calc3 });
 
@@ -328,6 +324,33 @@ $(function(){
                         } else if ( calc3 < '0' ) {
                             $(this).css({ 'opacity': 0 });
                         } else if (calc3 > '0') {
+                            // do nothing
+                        }
+
+                    }
+
+                })
+
+                // FADE TABLE IN AT BOTTOM OF PAGE
+
+                $('.table').each(function() {
+
+                    // tall object so fade in based on the top of it
+                    var objectTop = $(this).offset().top;
+
+                    if (objectTop < windowBottom) { //object comes into view (scrolling down)
+
+                        var calc4 = (windowBottom - objectTop) / range;
+
+                        console.log(calc4);
+
+                        $(this).css({ 'opacity': calc4 });
+
+                        if (calc4 > '1') {
+                            $(this).css({ 'opacity': 1 });
+                        } else if ( calc4 < '0' ) {
+                            $(this).css({ 'opacity': 0 });
+                        } else if (calc4 > '0') {
                             // do nothing
                         }
 
