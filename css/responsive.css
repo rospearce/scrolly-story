@@ -1,4 +1,13 @@
 /* Do exact with breakpoints rather than percentage so that don't get awkward cut-off when resize window slightly */
+@media screen and (min-width: 1650px) {
+
+    /* To avoid grey bars on very large screens */
+    video {
+        width: 100%;
+        height: auto;
+    }
+
+}
 
 @media screen and (min-width: 1550px) {
 
