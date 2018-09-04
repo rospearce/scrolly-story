@@ -42,7 +42,7 @@ $(function(){
         map: "global"
     },{
         icon: "fas fa-info-circle",
-        text: "Interactive by <a href='https://www.carbonbrief.org/author/rospearce' >Rosamund Pearce</a> with data compiled by <a href='https://www.carbonbrief.org/author/robertmcsweeney' target='_blank'>Robert McSweeney</a> for <a href='https://www.carbonbrief.org/'>Carbon Brief</a>. Licensed under <a href='https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode'>Creative Commons.</a>",
+        text: "Data compiled by <a href='https://www.carbonbrief.org/author/robertmcsweeney'target='_blank'>Robert McSweeney.</a> Interactive by <a href='https://www.carbonbrief.org/author/rospearce' >Rosamund Pearce.</a> Licensed under <a href='https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode'>Creative Commons.</a>",
     }];
 
     var enterEvents = function (ev, item) {

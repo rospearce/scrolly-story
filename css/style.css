@@ -77,10 +77,10 @@ a {
 
 .story-content {
     position: relative;
-    left: 10%;
+    left: calc((100% - 1000px)/2);
     margin-left: 30px;
     margin-top: 50px;
-    max-width: 350px;
+    max-width: 263px;
     margin-right: 20px;
     z-index: 6;
     opacity: 0;
@@ -104,8 +104,8 @@ a {
     position: fixed;
     /* height: 100%; */
     top: 0px;
-    width: 1200px;
-    left: 10%;
+    width: 1000px;
+    left: calc((100% - 1000px)/2);
     opacity: 0;
     height: 1720px;
     overflow: hidden;
@@ -159,7 +159,8 @@ a {
 
 .table-wrapper {
     top: 985px;
-    left: calc(10% + 330px);
+    left: calc((100% - 1000px)/2);
+    margin-left: 330px;
     width: 670px;
     height: 2080px;
     position: absolute;
@@ -229,7 +230,8 @@ td {
     top: 1370px;
     /* work out once know how many stories have */
     height: 1580px;
-    left: calc(10% + 20px);
+    left: calc((100% - 1000px)/2);
+    margin-left: 20px;
     width: 200px;
 }
 
@@ -257,11 +259,10 @@ p .fa-info-circle:hover {
 }
 
 #lines-wrapper {
-    /* each story is 650px plus 30px of padding on all sides */
     height: 3610px;
     /* decided to make fixed for now with break points */
-    width: 1200px;
-    left: 10%;
+    width: 1000px;
+    left: calc((100% - 1000px)/2);
     z-index: 4;
     position: absolute;
 }
@@ -281,8 +282,8 @@ p .fa-info-circle:hover {
 
 .intro-wrapper {
     top: 160px;
-    left: calc(10% + 170px);
-    /* margin-left: 20px; */
+    left: calc((100% - 1000px)/2);
+    margin-left: 165px;
     max-width: 550px;
     z-index: 999999;
     position: absolute;
