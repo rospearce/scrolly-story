@@ -12,8 +12,8 @@
 @media screen and (min-width: 1550px) {
 
     .story-gradient {
-        width: 1100px;
-        left: calc((100% - 1100px)/2);
+        width: calc((1100px/6)*4);
+        left: calc((100% - 1100px)/2 + 347px);
     }
 
     #lines-wrapper {
@@ -60,8 +60,8 @@
 @media screen and (max-width: 1250px) {
 
     .story-gradient {
-        width: 900px;
-        left: calc((100% - 900px)/2);
+        width: calc((900px/6)*4);
+        left: calc((100% - 900px)/2 + 280px);
     }
 
     #lines-wrapper {
@@ -138,8 +138,8 @@
 @media screen and (max-width: 1100px) {
 
     .story-gradient {
-        width: 800px;
-        left: calc((100% - 800px)/2);
+        width: calc((800px/6)*4);
+        left: calc((100% - 800px)/2 + 247px);
     }
 
     #lines-wrapper {
@@ -214,6 +214,14 @@
     .story-gradient {
         width: 700px;
         left: 0;
+    }
+
+    .story-content {
+        margin-left: 30px;
+    }
+
+    .map-wrapper {
+        margin-left: 20px;
     }
 
     #lines-wrapper {
