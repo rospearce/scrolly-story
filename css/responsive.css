@@ -13,6 +13,10 @@
 
     .story-gradient {
         width: calc((1100px/6)*4);
+        
+    }
+
+    .gradient-wrapper {
         left: calc((100% - 1100px)/2 + 347px);
     }
 
@@ -61,6 +65,9 @@
 
     .story-gradient {
         width: calc((900px/6)*4);
+    }
+
+    .gradient-wrapper {
         left: calc((100% - 900px)/2 + 280px);
     }
 
@@ -139,6 +146,9 @@
 
     .story-gradient {
         width: calc((800px/6)*4);
+    }
+
+    .gradient-wrapper {
         left: calc((100% - 800px)/2 + 247px);
     }
 
@@ -213,6 +223,9 @@
 
     .story-gradient {
         width: 700px;
+    }
+
+    .gradient-wrapper {
         left: 0;
     }
 

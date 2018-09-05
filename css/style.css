@@ -89,7 +89,7 @@ a {
 
 .story-content p {
     background-color: rgba(74, 106, 124, 0.9);
-    padding: 7px;
+    padding: 10px;
 }
 
 .story-mask {
@@ -115,7 +115,6 @@ a {
     /* height: 100%; */
     top: 0px;
     width: calc((1000px/6)*4);
-    /* left: calc((100% - 1000px)/2 + 313px); */
     padding-left: 20px;
     opacity: 0;
     height: 1720px;
@@ -243,12 +242,8 @@ td {
     /* work out once know how many stories have */
     height: 1580px;
     left: calc((100% - 1000px)/2);
-    margin-left: 10px;
+    margin-left: 0px;
     width: 200px;
-}
-
-.map-wrapper p {
-    font-family: "PT Sans", sans-serif;
 }
 
 p .fa-info-circle {
@@ -260,13 +255,28 @@ p .fa-info-circle:hover {
 }
 
 .map {
-    position: sticky;
-    top: 450px;
-    width: 200px;
-    height: 140px;
+    width: 100%;
+    height: 100px;
     z-index: 5;
     background-image:url(../img/global.svg);
     background-repeat: no-repeat;
+}
+
+.map-container {
+    background-color: rgba(74, 106, 124, 0.65);
+    position: sticky;
+    top: 450px;
+    width: 180px;
+    height: 120px;
+    z-index: 5;
+    padding: 10px;
+}
+
+.map-container p {
+    font-family: "PT Sans", sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 13px;
 }
 
 .map img {
