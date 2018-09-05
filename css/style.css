@@ -237,6 +237,10 @@ td {
     width: 200px;
 }
 
+.map-wrapper p {
+    font-family: "PT Sans", sans-serif;
+}
+
 p .fa-info-circle {
     opacity: 0.7;
 }
