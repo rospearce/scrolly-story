@@ -159,21 +159,3 @@ function updateTable () {
     .style("color", "#C6A1AE");
 
 }
-
-// setTimeout(function(){
-
-// // working but trying to trigger from scrolly now
-
-//     newData = rainfall;
-
-//     updateTable(newData);
-
-//     console.log(newData);
-
-// }, 3000);
-
-// sort by age
-// myTable.selectAll("tbody tr")
-//     .sort(function(a, b) {
-//         return d3.descending(a.age, b.age);
-//     });

@@ -366,7 +366,7 @@ li {
 }
 
 .droplinks li:hover {
-    background: #000000;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .droplinks ul li {
