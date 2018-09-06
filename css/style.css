@@ -218,26 +218,18 @@ td {
 
 .arrow-down {
     color: #212121;
+    opacity: 0.8;
 }
 
 .arrow-up {
     color: #f3f3f3;
+    opacity: 0.8;
 }
 
 .arrow-side {
     color: #999999;
-}
-
-.one {
-    opacity: 0.35;
-}
-
-.two {
-    opacity: 0.65;
-}
-
-.three {
-    opacity: 0.95;
+    font-size: 12px;
+    opacity: 0.8;
 }
 
 .map-wrapper {

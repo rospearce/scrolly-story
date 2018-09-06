@@ -37,9 +37,9 @@ var species = [
 ];
 
 var rainfall = [
-    { "name": "Extreme precipitation events", "1.5C": "<span class='arrow-up one'>&#9650;</span> 20%", "2C": "<span class='arrow-up two'>&#9650;</span> 26%", "3C": ""},
-    { "name": "Maximum 5-day rainfall total", "1.5C": "<span class='arrow-up one'>&#9650;</span> 11%", "2C": "<span class='arrow-up two'>&#9650;</span> 12%", "3C": ""},
-    { "name": "Consecutive dry days", "1.5C": "<span class='arrow-side one'>&#9664;&#9654;</span> 0%", "2C": "<span class='arrow-down two'>&#9660;</span> -5%", "3C": ""}
+    { "name": "Extreme precipitation events", "1.5C": "<span class='arrow-up'>&#9650;</span> 20%", "2C": "<span class='arrow-up'>&#9650;</span> 26%", "3C": "<span class='arrow-up'>&#9650;</span> 28%"},
+    { "name": "Maximum 5-day rainfall total", "1.5C": "<span class='arrow-up'>&#9650;</span> 11%", "2C": "<span class='arrow-up'>&#9650;</span> 12%", "3C": "<span class='arrow-up'>&#9650;</span> 14%"},
+    { "name": "Consecutive dry days", "1.5C": "<span class='arrow-side'>&#9664;&#9654;</span> 0%", "2C": "<span class='arrow-down'>&#9660;</span> -5%", "3C": "<span class='arrow-down'>&#9660;</span> -8%"}
 ];
 
 var gdp = [
