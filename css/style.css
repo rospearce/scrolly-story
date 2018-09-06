@@ -224,16 +224,20 @@ td {
     color: #f3f3f3;
 }
 
+.arrow-side {
+    color: #999999;
+}
+
 .one {
-    opacity: 0.3;
+    opacity: 0.35;
 }
 
 .two {
-    opacity: 0.6;
+    opacity: 0.65;
 }
 
 .three {
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 .map-wrapper {
@@ -263,7 +267,7 @@ p .fa-info-circle:hover {
 }
 
 .map-container {
-    background-color: rgba(74, 106, 124, 0.65);
+    background-color: rgba(74, 106, 124, 0.75);
     position: sticky;
     top: 450px;
     width: 180px;
