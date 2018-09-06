@@ -146,7 +146,7 @@ $(function(){
 
         $("p .fa-info-circle").on("mouseover", function(event) {
 
-            var x = event.pageX - 105;
+            var x = event.pageX - 150;
             var y = event.pageY + 30;
             var info = item.data.info;
 
@@ -399,7 +399,6 @@ function pauseVid() {
 // TWITTER SHARE ACTIONS
 
 $("#twitter").on("click", function() {
-
 
     // Remove existing iframe
     $('#tweet iframe').remove();

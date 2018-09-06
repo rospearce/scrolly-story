@@ -471,8 +471,8 @@ a:link {
 
 .tooltip {
     background-color: rgba(74, 106, 124, 0.95);
-    width: 220px;
-    font-size: 13.5px;
+    width: 200px;
+    font-size: 12px;
 }
 
 .arrow-tooltip {
@@ -482,7 +482,7 @@ a:link {
     border-right: 7px solid transparent;
     border-bottom: 7px solid rgba(74, 106, 124, 0.95);
     position: absolute;
-    right: calc(50% - 7px);
+    right: calc(25%);
     top: -2px;
 }
 
