@@ -119,14 +119,12 @@ $(function(){
         console.log(item.data.name + ", is now active!");
 
         // UPDATE MAP
-
         if (item.index < 5 && item.index > 1) {
             $map.css( "background-image", "url('img/" + item.data.map + ".svg')");
             $mapText.text(item.data.location);
         }
 
         // UPDATE TABLE
-
         function triggerTableUpdate() {
 
             dataName = (item.data.name).toLowerCase();
@@ -397,3 +395,20 @@ function playVid() {
 function pauseVid() { 
     vid.pause(); 
 }
+
+// TWITTER SHARE ACTIONS
+
+$("#twitter").on("click", function() {
+
+
+    // Remove existing iframe
+    $('#tweet iframe').remove();
+
+    var baseTweet = "https://twitter.com/intent/tweet?url=http%3A%2F%2Fcarbonbrief.org&text=";
+    var text = "Interactive: How the world will look at 1.5C and 2C of warming";
+    var encoded = encodeURI(text);
+    var customTweet = baseTweet += encoded;
+
+    $('#twitter > a').attr('href', customTweet);
+
+});
