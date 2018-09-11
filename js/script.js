@@ -192,12 +192,15 @@ $(function(){
             // add title from data
             // actually better to build all the items in the same way so that can manipulate the behaviour of all?
             if(item.index === 0) {
-                // don't append anything
-                item.el.height("500").css("min-height", "300px");
+                item.el.addClass("story-intro1");
+                // item.el.height("500").css("min-height", "300px");
             } else if (item.index === 1) {
                 // don't append anything
-                item.el.height("300").css("min-height", "300px");
+                item.el.addClass("story-intro2");
+                // item.el.height("300").css("min-height", "300px");
             } else if (item.index > 1 && item.index < 5) {
+
+                item.el.addClass("story-middle");
  
                 // build impacts from data
                 item.el.append(
@@ -219,8 +222,8 @@ $(function(){
                 });
             } else if (item.index === 5) {
 
-                // reduce height of credit
-                item.el.height("500").css("min-height", "300px");
+                // change style via class so can make responsive
+                item.el.addClass("story-end");
 
                 // build credit
                 item.el.append(

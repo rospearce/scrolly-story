@@ -17,10 +17,27 @@ video {
 }
 
 .scrolly > div {
-    /* border-top:1px solid #141414; */
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.story-middle {
     min-height: 650px;
+}
+
+.story-end {
+    height: 500px;
+    min-height: 350px;
+}
+
+.story-intro1 {
+    height: 500px !important;
+    min-height: 300px !important;
+}
+
+.story-intro2 {
+    height: 300px !important;
+    min-height: 300px !important;
 }
 
 footer {
@@ -120,40 +137,6 @@ a {
     height: 1720px;
     overflow: hidden;
 }
-
-/* .blur {
-    opacity: 0;
-    animation-name: fadeOutOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease;
-	animation-duration: 2s;
-} */
-
-/* .active {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 2s;
-} */
-
-/* @keyframes fadeInOpacity {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-}
-
-@keyframes fadeOutOpacity {
-	0% {
-		opacity: 1;
-	}
-	100% {
-		opacity: 0;
-	}
-} */
 
 .picture-mask {
     background-color: #28282e;

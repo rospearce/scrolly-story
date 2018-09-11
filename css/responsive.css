@@ -479,7 +479,7 @@
 
 
     /* change height of stories */
-    .scrolly > div {
+    .story-middle {
         min-height: 550px;
     }
 
@@ -741,7 +741,7 @@
 @media screen and (max-width: 490px) {
 
     /* change height of stories */
-    .scrolly > div {
+    .story-middle {
         min-height: 500px;
     }
 
