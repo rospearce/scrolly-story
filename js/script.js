@@ -11,7 +11,7 @@ $(function(){
     var $map = $('.map')
     var $mapText = $('#map-text')
     var windowHeight = $(window).height();
-
+    var windowWidth = $(window).width();
     var viewportHeight = window.innerHeight
     var halfViewportHeight = Math.floor(viewportHeight / 2)
 
@@ -145,8 +145,6 @@ $(function(){
         // SHOW EXTRA INFO ON MOUSEOVER
 
         $("p .fa-info-circle").on("mouseover", function(event) {
-
-            var windowWidth = $(window).width();
 
             var x = function () {
                 if (windowWidth > 750) {
