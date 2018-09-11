@@ -4,6 +4,8 @@ var margin = {top: 210, right: 0, bottom: 0, left: 0},
 width = parseInt(d3.select("#lines").style("width")) - margin.left - margin.right,
 height = parseInt(d3.select("#lines").style("height")) - margin.top - margin.bottom;
 
+var screenWidth = $(window).width();
+
 var svg = d3.select("#lines").append("svg")
     .attr("id", "svg-1")
     .attr("width", width + margin.left + margin.right)
@@ -41,6 +43,40 @@ var data = [{
         {length: "1740", across: "100"},
         {length: "1820", across: "100"}
     ]
+}]
+
+// alterntive layout for smaller screens
+
+var data2 = [{
+    name: "Line 2",
+    values: [
+        {length: "80", across: "100"},
+        {length: "230", across: "100"},
+        {length: "280", across: "200"},
+        {length: "1690", across: "200"},
+        {length: "1740", across: "100"},
+        {length: "1820", across: "100"}
+    ]
+},{
+    name: "Line 3",
+    values: [
+        {length: "80", across: "100"},
+        {length: "230", across: "100"},
+        {length: "280", across: "300"},
+        {length: "1690", across: "300"},
+        {length: "1740", across: "100"},
+        {length: "1820", across: "100"}
+    ]
+},{
+    name: "Line 4",
+    values: [
+        {length: "80", across: "100"},
+        {length: "230", across: "100"},
+        {length: "280", across: "400"},
+        {length: "1690", across: "400"},
+        {length: "1740", across: "100"},
+        {length: "1820", across: "100"}
+    ]
 }] 
 
 // format data
@@ -63,6 +99,17 @@ var y = d3.scaleLinear()
 x.domain([0, 600]);
 y.domain([0, 2000]);
 
+// second scale for smaller screen
+
+var x2 = d3.scaleLinear()
+    .range([0, width]);
+
+var y2 = d3.scaleLinear()
+    .range([0, height]);
+
+x2.domain([0, 500]);
+y2.domain([0, 2000]);
+
 // define the line
 var line = d3.line()
     .curve(d3.curveLinear)
@@ -74,6 +121,13 @@ var lineInitial = d3.line()
     .curve(d3.curveLinear)
     .x(function(d) { return x(0); })
     .y(function(d) { return y(0); });
+
+// second lines for smaller screens
+
+var line2 = d3.line()
+    .curve(d3.curveLinear)
+    .x(function(d) { return x2(d.across); })
+    .y(function(d) { return y2(d.length); });
 
 // from https://bl.ocks.org/mbostock/5649592
 
@@ -108,6 +162,29 @@ function drawLines () {
 
 }
 
-setTimeout(function(){ 
-    drawLines();
+function drawLines2 () {
+
+    let lines = svg.append('g')
+    .attr('class', 'lines');
+
+    lines.selectAll('.line-group')
+    .data(data2).enter()
+    .append('g')
+    .attr('class', 'line-group')
+    .append('path')
+    .attr('class', 'line')  
+    .attr("d", function(d) { return line2(d.values); })
+    .style('stroke', "#f3f3f3")
+    .call(transition);
+
+}
+
+setTimeout(function(){
+    
+    if (screenWidth > 440) {
+        drawLines();
+    } else {
+        drawLines2();
+    }
+    
 }, 1000);

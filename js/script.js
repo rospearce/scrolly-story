@@ -10,7 +10,7 @@ $(function(){
     var $gradient = $('.story-gradient')
     var $map = $('.map')
     var $mapText = $('#map-text')
-    var windowHeight = $(window).height()
+    var windowHeight = $(window).height();
 
     var viewportHeight = window.innerHeight
     var halfViewportHeight = Math.floor(viewportHeight / 2)
@@ -146,7 +146,17 @@ $(function(){
 
         $("p .fa-info-circle").on("mouseover", function(event) {
 
-            var x = event.pageX - 150;
+            var windowWidth = $(window).width();
+
+            var x = function () {
+                if (windowWidth > 750) {
+                    return event.pageX - 150;
+                } else if (windowWidth < 749 && windowWidth > 650) {
+                    return event.pageX - 85;
+                } else {
+                    return event.pageX - 38;
+                }
+            }
             var y = event.pageY + 30;
             var info = item.data.info;
 
@@ -335,6 +345,7 @@ $(function(){
                     }
 
                 })
+
 
                 // FADE TABLE IN AT BOTTOM OF PAGE
 
