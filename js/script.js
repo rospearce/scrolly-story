@@ -22,7 +22,7 @@ $(function(){
         name: "background2"
     },{
         name: "SPECIES",
-        icon: "fas fa-paw",
+        icon: "<img class='title-icon' src='../img/river.svg'>",
         text: "Proportion of species losing >50% of their climatic range.",
         info: "Extra info 1 - Lorem ipsum dolor sit amet",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/04/Turtle-and-bleached-coral-on-Heron-Island-2.jpeg",
@@ -30,7 +30,7 @@ $(function(){
         location: "Australia"
     },{
         name: "RAINFALL",
-        icon: "fas fa-tint",
+        icon: "<i class='fas fa-tint'></i>",
         info: "Extra info 2 - Lorem ipsum dolor sit amet",
         text: "Lorem ipsum dolor sit amet, eligendi scriptorem et nam.",
         background: "https://www.carbonbrief.org/wp-content/uploads/2018/01/C5T9H7-rainfall.jpg",
@@ -204,9 +204,9 @@ $(function(){
  
                 // build impacts from data
                 item.el.append(
-                    "<div class='story-mask'><div class='story-content main'><h2><span class='title-span'><i class='"
+                    "<div class='story-mask'><div class='story-content main'><h2><span class='title-span'>"
                     + item.data.icon +
-                    "'></i>   " 
+                    "   " 
                     + item.data.name 
                     + "</span></h2><p>" 
                     + item.data.text 
